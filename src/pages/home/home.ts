@@ -28,20 +28,20 @@ export class HomePage {
 
   myIcon: string = "home";
 
-  private contractPage=Contract;
-  private contractListPage=ContractList;
-  private orderPage=Order;
-  private  orderListPage=OrderList;
+  contractPage=Contract;
+  contractListPage=ContractList;
+  orderPage=Order;
+  orderListPage=OrderList;
 
-  private stockGoodsPage=StockGoods;
-  private stockGoodsListPage=StockGoodsList;
-  private billsPage=Bills;
-  private billsListPage=BillsList;
+  stockGoodsPage=StockGoods;
+  stockGoodsListPage=StockGoodsList;
+  billsPage=Bills;
+  billsListPage=BillsList;
 
-  private expensePage=Expense;
-  private expenseListPage=ExpenseList;
-  private raisePage=Raise;
-  private raiseListPage=RaiseList;
+  expensePage=Expense;
+  expenseListPage=ExpenseList;
+  raisePage=Raise;
+  raiseListPage=RaiseList;
 
   appInstance:AppGlobal;
   username:string;
