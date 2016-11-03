@@ -101,7 +101,16 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     HomePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    //IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+        backButtonText: '返回',
+        iconMode: 'ios',
+        modalEnter: 'modal-slide-in',
+        modalLeave: 'modal-slide-out',
+        tabsPlacement: 'bottom',
+        pageTransition: 'ios'
+      }, {}
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
