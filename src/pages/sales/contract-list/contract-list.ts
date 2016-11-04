@@ -13,7 +13,7 @@ import {Contract} from  '../contract/contract';
   templateUrl: 'contract-list.html'
 })
 export class ContractList {
-  myIcon: string = "home";
+  myIcon: string = "md-ionic";
 
   billTime1:string="2016年9月";
   billTime2:string="2016年8月";

@@ -26,7 +26,7 @@ import {AppGlobal} from '../../providers/app-global';
 })
 export class HomePage {
 
-  myIcon: string = "home";
+  myIcon: string = "md-ionic";
 
   contractPage=Contract;
   contractListPage=ContractList;

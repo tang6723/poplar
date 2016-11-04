@@ -13,6 +13,8 @@ import { NavController } from 'ionic-angular';
 })
 export class OrderList {
 
+  myIcon: string = "md-ionic";
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
