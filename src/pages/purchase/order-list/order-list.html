@@ -21,4 +21,56 @@
 
 <ion-content padding>
 
+  <ion-list inset>
+    <ion-item-divider primary>{{billTime1}} </ion-item-divider>
+    <ion-item *ngFor="let item of items1" (click)="itemSelected(items1)">
+      <ion-row>
+        <ion-col width-62>
+          <h2>{{item.customer}}</h2>
+        </ion-col>
+        <ion-col width-38 text-right>
+          总价：￥<span color="danger">{{item.total}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-note>{{item.billno}}</ion-note>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-badge>{{item.dateissue}}</ion-badge>
+        </ion-col>
+        <ion-col center text-right>
+          <span item-right color="primary">{{item.billstate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item-divider primary>{{billTime2}} </ion-item-divider>
+    <ion-item *ngFor="let item of items2" (click)="itemSelected(items2)">
+      <ion-row>
+        <ion-col width-67>
+          <h2>{{item.customer}}</h2>
+        </ion-col>
+        <ion-col width-33>
+          总价：￥<span color="danger">{{item.total}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-note>{{item.billno}}</ion-note>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-badge>{{item.dateissue}}</ion-badge>
+        </ion-col>
+        <ion-col center text-right>
+          <span item-right color="primary">{{item.billstate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+  </ion-list>
+
 </ion-content>

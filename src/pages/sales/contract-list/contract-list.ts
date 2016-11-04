@@ -20,6 +20,8 @@ export class ContractList {
   billTime3:string="2016年7月";
   billTime4:string="2016年6月";
 
+  items: string[];
+
   items1: any = [
     {imgurl: 'ios-flag-outline', id: '123456', customer: '客户1',billno: '#201609040008', dateissue: '09-04', billstate: '草案',total: 30080  },
     {imgurl: 'ios-flame-outline',id: '123457', customer: '客户2',billno: '#201609040007', dateissue: '09-04', billstate: '执行',total: 30080  },
@@ -45,6 +47,21 @@ export class ContractList {
   itemSelected(item: any)
   {
     this.navCtrl.push(Contract, {});
+  }
+
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    //this.initializeItems();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
 }
