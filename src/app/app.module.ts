@@ -105,6 +105,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     IonicModule.forRoot(MyApp, {
         backButtonText: '返回',
         iconMode: 'ios',
+        mode: 'ios',
         modalEnter: 'modal-slide-in',
         modalLeave: 'modal-slide-out',
         tabsPlacement: 'bottom',

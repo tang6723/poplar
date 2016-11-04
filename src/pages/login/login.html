@@ -6,13 +6,53 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>login</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>REA系统</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="md-contacts" item-left color="primary"></ion-icon>
+      <ion-label floating>用户：</ion-label>
+      <ion-input type="text"[(ngModel)]="userCode"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-key" item-left color="primary"></ion-icon>
+      <ion-label floating>密码：</ion-label>
+      <ion-input type="password" [(ngModel)]="passWord"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div padding>
+    <button ion-button full icon-left (click)="loginClick()">
+      <ion-icon name="md-log-out"></ion-icon>
+      登录
+    </button>
+  </div>
+  <ion-row padding>
+
+    <ion-col>
+      <button ion-button color="primary" clear small icon-left>
+        <ion-icon name='thumbs-up'></ion-icon>
+        找回密码
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+      </ion-note>
+    </ion-col>
+    <ion-col>
+      <button ion-button color="primary" clear small icon-left>
+        <ion-icon name='text'></ion-icon>
+        企业注册
+      </button>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
