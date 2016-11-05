@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, ViewController} from 'ionic-angular';
+import {NavController, ViewController, AlertController} from 'ionic-angular';
 
 import {Login} from '../../login/login';
 import {SettingHome} from '../../setting/setting-home/setting-home';
@@ -20,7 +20,7 @@ export class Popover {
   settingHome=SettingHome;
   appInstance:AppGlobal;
 
-  constructor(public viewCtrl: ViewController,public navCtrl: NavController) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public alertCtrl: AlertController) {
     this.appInstance=AppGlobal.getInstance();
   }
 
@@ -39,6 +39,25 @@ export class Popover {
     this.appInstance.usertitle="";
     this.viewCtrl.dismiss();
     this.navCtrl.setRoot(Login);
+  }
+
+  confirmExitApp() {
+    let alert = this.alertCtrl.create({
+      title: "退出应用",
+      message: "确实要退出应用?",
+      buttons: [
+        {
+          text: "取消"
+        },
+        {
+          text: "确定",
+          handler: () => {
+            navigator['app'].exitApp();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
