@@ -6,13 +6,70 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>setting-home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      <ion-icon [name]="myIcon"></ion-icon>
+      系统设置
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list inset>
+    <ion-item-group color="primary">
+      <ion-item-divider primary>资源</ion-item-divider>
+      <button ion-item [navPush]="goodsPage">
+        <ion-icon name="ios-archive" item-left></ion-icon>
+        商品设置
+      </button>
+      <button ion-item [navPush]="humanPage">
+        <ion-icon name="ios-create-outline" item-left></ion-icon>
+        人力资源设置
+      </button>
+
+      <ion-item-divider color="primary">事件</ion-item-divider>
+      <button ion-item [navPush]="eventsPage">
+        <ion-icon name="ios-flash-outline" item-left></ion-icon>
+        事件设置
+      </button>
+      <ion-item-divider>代理</ion-item-divider>
+      <button ion-item [navPush]="customerPage">
+        <ion-icon name="ios-contacts-outline" item-left></ion-icon>
+        客户设置
+      </button>
+
+    </ion-item-group>
+
+    <ion-item-divider primary>员工</ion-item-divider>
+    <button ion-item [navPush]="employeePage">
+      <ion-icon name="ios-people-outline" item-left color="primary"></ion-icon>
+      员工设置
+    </button>
+
+    <ion-item-divider primary>报表</ion-item-divider>
+    <button ion-item [navPush]="reportAssetPage">
+      <ion-icon name="ios-briefcase-outline" item-left></ion-icon>
+      资产负债表
+    </button>
+    <button ion-item [navPush]="reportBalancePage">
+      <ion-icon name="logo-usd" item-left></ion-icon>
+      账户余额表
+    </button>
+    <button ion-item [navPush]="reportProfitPage">
+      <ion-icon name="logo-yen" item-left></ion-icon>
+      利润表
+    </button>
+    <button ion-item [navPush]="reportIncomePage">
+      <ion-icon name="ios-navigate-outline" item-left></ion-icon>
+      收入表
+    </button>
+    <button ion-item [navPush]="reportPayoutPage">
+      <ion-icon name="md-exit" item-left></ion-icon>
+      支出表
+    </button>
+  </ion-list>
 
 </ion-content>
