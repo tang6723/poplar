@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavController, ModalController} from 'ionic-angular';
 
 import {ContractGoods} from '../contract-goods/contract-goods';
+import {ContractCustomer} from '../contract-customer/contract-customer';
 import {AppGlobal} from '../../../providers/app-global';
 
 /*
@@ -62,6 +63,12 @@ export class Contract {
 
   ionViewDidLoad() {
     console.log('Hello Contract Page');
+  }
+
+  presentCustomerModal(){
+    let modal=this.modalCtrl.create(ContractCustomer);
+    modal.present();
+
   }
 
   presentGoodsModal(){

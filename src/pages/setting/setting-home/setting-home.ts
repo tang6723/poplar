@@ -23,6 +23,7 @@ import {ReportProfit} from '../report-profit/report-profit';
   templateUrl: 'setting-home.html'
 })
 export class SettingHome {
+  myIcon: string = "md-ionic";
 
   goodsPage=GoodsList;
   customerPage=CustomerList;

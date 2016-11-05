@@ -2,21 +2,21 @@ import { Component } from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 
 /*
-  Generated class for the ContractGoods page.
+  Generated class for the ContractCustomer page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-contract-goods',
-  templateUrl: 'contract-goods.html'
+  selector: 'page-contract-customer',
+  templateUrl: 'contract-customer.html'
 })
-export class ContractGoods {
+export class ContractCustomer {
 
-  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
+  constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
-    console.log('Hello ContractGoods Page');
+    console.log('Hello ContractCustomer Page');
   }
 
   dismiss(){

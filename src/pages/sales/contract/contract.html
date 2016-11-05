@@ -11,7 +11,7 @@
   </ion-navbar>
   <ion-toolbar>
     <ion-buttons start *ngIf="isBill">
-      <button ion-button color="primary">
+      <button ion-button color="primary" (click)="presentCustomerModal()">
         <ion-icon name="md-person-add"></ion-icon>
       </button>
       <button ion-button color="primary" (click)="presentGoodsModal()">

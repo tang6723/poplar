@@ -10,6 +10,7 @@ import {ContractItem} from '../pages/sales/contract-item/contract-item';
 import {ContractList} from '../pages/sales/contract-list/contract-list';
 import {ContractTimeline} from '../pages/sales/contract-timeline/contract-timeline';
 import {ContractGoods} from '../pages/sales/contract-goods/contract-goods';
+import {ContractCustomer} from '../pages/sales/contract-customer/contract-customer';
 
 import {Bills} from '../pages/finance/bills/bills';
 import {BillsItem} from '../pages/finance/bills-item/bills-item';
@@ -57,6 +58,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     ContractList,
     ContractTimeline,
     ContractGoods,
+    ContractCustomer,
 
     Bills,
     BillsItem,
@@ -121,6 +123,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     ContractList,
     ContractTimeline,
     ContractGoods,
+    ContractCustomer,
 
     Bills,
     BillsItem,
