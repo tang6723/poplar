@@ -41,11 +41,11 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
   <ion-list inset>
     <ion-item-divider>
-      <h5 item-left >合计：￥<span color="danger">{{billtotal}}</span>元</h5>
+      <h5 item-left >合计：￥<span color="danger">{{billtotal+tracfficCost+installCost}}</span>元</h5>
       <ion-badge item-right>{{billstate}}</ion-badge>
     </ion-item-divider>
     <ion-item>
@@ -60,17 +60,33 @@
     <ion-item *ngFor="let item of items">
       <h2>{{item.name}}</h2>
       <h3>{{item.specification}}</h3>
-      <p>
-        <ion-badge item-right>{{item.num}}</ion-badge>
-        单价：<span class="price-strong">￥{{item.price}}</span>
-      </p>
-      <span item-right primary>小计：￥{{item.num*item.price}}</span>
+
+      <ion-row>
+        <ion-col  text-left>
+          单价<span color="danger">￥{{item.price}}</span>
+        </ion-col>
+        <ion-col center text-center>
+          数量<span item-right color="primary">{{item.num}}</span>
+        </ion-col>
+        <ion-col center text-right>
+          小计<span item-right color="danger">{{item.num*item.price}}</span>
+        </ion-col>
+      </ion-row>
     </ion-item>
 
     <ion-item>
-      <h2>商品总额 <span item-right>{{billtotal}}</span></h2>
-      <P>+运费</P>
-      <P>+安装费</P>
+      <ion-row>
+        <ion-col><h2>商品总额: </h2></ion-col>
+        <ion-col text-right><h2> <span color="danger">{{billtotal}}</span></h2></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><P>+运费: </P></ion-col>
+        <ion-col text-right><h2> <span color="danger">{{tracfficCost}}</span></h2></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><P>+安装费: </P></ion-col>
+        <ion-col text-right><h2> <span  color="danger">{{installCost}}</span></h2></ion-col>
+      </ion-row>
 
     </ion-item>
 
@@ -81,7 +97,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <h5 item-right>合计：￥<span color="danger">{{billtotal}}</span>元</h5>
+    <h5 item-right>合计：￥<span color="danger">{{billtotal+tracfficCost+installCost}}</span>元</h5>
     <ion-buttons end>
       <button ion-button icon-left >
         <ion-icon name="ios-checkbox-outline"></ion-icon>

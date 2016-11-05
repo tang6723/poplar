@@ -19,7 +19,7 @@ export class Contract {
 
   billid:string="#201609040008";
   billstate:string="草案";
-  billtotal:string ="30，380.00";
+  billtotal:number =30380.00;
   freight:string ="0.00";
   dateissue:string ="2016年9月3日";
   customer:string ="鞍山矿业集团有限公司";
@@ -28,8 +28,8 @@ export class Contract {
   customeraddress:string ="辽宁省鞍山市铁东区湖南街34号";
   customerList; any;
   typeTmp: string;
-  tracfficCost:string="2450.23";
-  installCost:string="900";
+  tracfficCost:number=2450;
+  installCost:number=900;
 
   isBill:boolean=false;
   isCheck:boolean=false;
@@ -42,11 +42,11 @@ export class Contract {
   appInstance:AppGlobal;
 
    items: any = [
-    {imgurl: 'ios-flag-outline',id: '123456', name: '商品1', price: 200.00, num: 3, specification: '规格33MM'},
-    {imgurl: 'ios-flame-outline',id: '123457', name: '商品2', price: 1120.00, num: 9, specification: '规格66MM'},
-    {imgurl: 'ios-flash-outline',id: '123458', name: '商品3', price: 280.00, num: 6, specification: '规格40MM'},
-    {imgurl: 'ios-flash-outline',id: '123459', name: '运费', price: 2450.23, num: 15, specification: '货物运输费'},
-    {imgurl: 'ios-flash-outline',id: '123460', name: '安装费', price: 900, num: 30, specification: '现场安装费'}
+    {imgurl: 'ios-flag-outline',id: '123456', name: 'Apple MacBook Air 13.3英寸笔记本电脑 ', price: 200.00, num: 3, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flame-outline',id: '123457', name: 'Apple MacBook Air ', price: 1120.00, num: 9, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123458', name: '商品3 Apple MacBook Air ', price: 280.00, num: 6, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123459', name: 'Apple MacBook Air ', price: 2450.23, num: 15, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123460', name: 'Apple MacBook Air ', price: 900, num: 30, specification: '规格13.3英寸笔记本'}
   ];
 
   constructor(public navCtrl: NavController ,public modalCtrl: ModalController) {
