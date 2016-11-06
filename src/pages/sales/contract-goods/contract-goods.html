@@ -7,19 +7,31 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>销售商品列表</ion-title>
+    <ion-title>选择销售商品</ion-title>
   </ion-navbar>
+  <ion-toolbar >
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <P>
-    <button ion-button icon-left (click)="dismiss()">
-      <ion-icon name="star" ></ion-icon>
-      Left Icon
-    </button>
-  </P>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="dismiss()">
+        <ion-icon name="md-close-circle"></ion-icon>
+        取消
+      </button>
+      <button ion-button icon-left round outline color="danger" (click)="dismiss()">
+        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+        确定
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
