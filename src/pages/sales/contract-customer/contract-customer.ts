@@ -20,11 +20,20 @@ export class ContractCustomer {
   telephoneParam:string ="1233333";
   customeraddressParam:string ="辽宁省鞍山市立山区湖南街34号";
 
+  customerList: any;
 
-  customerList; any;
 
   constructor(public navCtrl: NavController ,public viewCtrl: ViewController,params: NavParams) {
     this.customerIdParam = params.get('customerIdParam');
+
+    this.customerList = [
+      {"id": "010101", "customer": "客户1", "telephone": '12345678', "contacts": "联系人1", "sex": "ios-woman", "customeraddress": "客户1地址"},
+      {"id": "010102", "customer": "客户2", "telephone": '7654321', "contacts": "联系人2", "sex": "ios-man", "customeraddress": "客户2地址"},
+      {"id": "010103", "customer": "客户3", "telephone": '12345678', "contacts": "联系人3", "sex": "ios-man", "customeraddress": "客户3地址"},
+      {"id": "010111", "customer": "客户4", "telephone": '7895456564564', "contacts": "联系人4", "sex": "ios-woman", "customeraddress": "客户4地址"},
+      {"id": "010121", "customer": "客户5", "telephone": '12345678', "contacts": "联系人5", "sex": "ios-man", "customeraddress": "客户5地址"},
+      {"id": "010104", "customer": "客户6", "telephone": '12345678', "contacts": "联系人6", "sex": "ios-man", "customeraddress": "客户6地址"}
+    ];
 
   }
 

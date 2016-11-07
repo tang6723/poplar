@@ -21,6 +21,12 @@
   <P>
     {{customerIdParam}}
   </P>
+  <ion-item *ngFor="let item of customerList">
+    <ion-icon name="ios-contacts" primary item-left></ion-icon>
+    <h2>{{item.customer}}</h2>
+    <h5>{{item.contacts}}      {{item.telephone}}</h5>
+    <p>{{item.customeraddress}}</p>
+  </ion-item>
 
 </ion-content>
 
