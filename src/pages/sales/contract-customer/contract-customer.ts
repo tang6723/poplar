@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, ViewController} from 'ionic-angular';
+import {NavController, ViewController, NavParams} from 'ionic-angular';
 
 /*
   Generated class for the ContractCustomer page.
@@ -14,15 +14,26 @@ import {NavController, ViewController} from 'ionic-angular';
 export class ContractCustomer {
 
   items: string[];
+  customerIdParam: string;
+  customerParam:string ="鞍山技术学校";
+  contactsParam:string="马蓉";
+  telephoneParam:string ="1233333";
+  customeraddressParam:string ="辽宁省鞍山市立山区湖南街34号";
 
-  constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {}
+
+  customerList; any;
+
+  constructor(public navCtrl: NavController ,public viewCtrl: ViewController,params: NavParams) {
+    this.customerIdParam = params.get('customerIdParam');
+
+  }
 
   ionViewDidLoad() {
     console.log('Hello ContractCustomer Page');
   }
 
   dismiss(){
-    let data={'foo':'bar'};
+    let data={'customerIdParam':'3','customerParam':'鞍山技术学校','contactsParam':'马蓉','telephoneParam':'1233333'};
     this.viewCtrl.dismiss(data);
   }
 

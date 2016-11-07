@@ -22,6 +22,7 @@ export class Contract {
   billtotal:number =30380.00;
   freight:string ="0.00";
   dateissue:string ="2016年9月3日";
+  customerId = '2';
   customer:string ="鞍山矿业集团有限公司";
   contacts:string="韦小宝";
   telephone:string ="13599915899";
@@ -30,6 +31,7 @@ export class Contract {
   typeTmp: string;
   tracfficCost:number=2450;
   installCost:number=900;
+
 
   isBill:boolean=false;
   isCheck:boolean=false;
@@ -66,7 +68,16 @@ export class Contract {
   }
 
   presentCustomerModal(){
-    let modal=this.modalCtrl.create(ContractCustomer);
+    let modal=this.modalCtrl.create(ContractCustomer,{ 'customerId': this.customerId });
+    modal.onDidDismiss(data => {
+      this.customerId=data.customerIdParam;
+      this.customer=data.customerParam;
+      this.contacts=data.contactsParam;
+      this.telephone=data.telephoneParam;
+      this.customeraddress=data.customeraddressParam;
+
+      console.log(data.foo);
+    });
     modal.present();
 
   }
