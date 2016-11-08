@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>选择客户</ion-title>
   </ion-navbar>
-  <ion-toolbar >
+  <ion-toolbar>
     <ion-searchbar (input)="getItems($event)"></ion-searchbar>
   </ion-toolbar>
 
@@ -21,12 +21,13 @@
   <P>
     {{customerIdParam}}
   </P>
-  <ion-item *ngFor="let item of customerList">
-    <ion-icon name="ios-contacts" primary item-left></ion-icon>
-    <h2>{{item.customer}}</h2>
-    <h5>{{item.contacts}}      {{item.telephone}}</h5>
-    <p>{{item.customeraddress}}</p>
-  </ion-item>
+  <ion-list radio-group>
+    <ion-item *ngFor="let item of customerList">
+      <h2>{{item.customer}}</h2>
+      <h5>{{item.contacts}} {{item.telephone}}</h5>
+      <p>{{item.customeraddress}}</p>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
 
