@@ -24,7 +24,19 @@
   <ion-list radio-group>
     <ion-item *ngFor="let item of customerList">
       <h2>{{item.customer}}</h2>
-      <h5>{{item.contacts}} {{item.telephone}}</h5>
+      <ion-row>
+        <ion-col  text-left>
+          <span color="primary">￥{{item.contacts}}</span>
+        </ion-col>
+        <ion-col center text-center>
+          电话<span item-right color="primary">{{item.telephone}}</span>
+        </ion-col>
+        <ion-col center text-right>
+          选择
+          <span item-right color="danger"><input type="radio" primary style="width:24px;height: 20px;" /> </span>
+        </ion-col>
+      </ion-row>
+
       <p>{{item.customeraddress}}</p>
     </ion-item>
   </ion-list>
