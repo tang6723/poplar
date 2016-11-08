@@ -15,6 +15,134 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col width-67>
+          <h2>{{customer}}</h2>
+        </ion-col>
+        <ion-col width-33>
+          ￥{{billtotal}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-note>{{billid}}</ion-note>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>{{dateissue}}</ion-note>
+        </ion-col>
+        <ion-col center text-right>
+          <span item-right primary>{{billstate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
+
+      <div class="divider-title">流程列表</div>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-thumb bg-color-red timeline-icon">
+            <ion-icon name="md-arrow-dropdown-circle"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>审批</h4>
+            <p>说明占位</p>
+            <!--<ion-item>
+              <ion-label  floating>审批情况</ion-label>
+              <ion-textarea id="text1" rows="2"></ion-textarea>
+            </ion-item>-->
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              审批：王五
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/09/01</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+          <div class="timeline-thumb bg-color-white timeline-icon">
+            <ion-icon primary name="md-checkbox-outline"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>收款</h4>
+            <p>说明占位</p>
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              收款：小赵
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/09/02</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-thumb bg-color-white timeline-icon">
+            <ion-icon primary name="md-checkbox-outline"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>发票</h4>
+            <p>说明占位</p>
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              开票：王五
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/01/01</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-thumb bg-color-white timeline-icon">
+            <ion-icon primary name="md-checkbox-outline"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>出库</h4>
+            <p>说明占位，说明占位，说明占位，说明占位</p>
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              出库：王五
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/01/01</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+          <div class="timeline-thumb bg-color-white timeline-icon">
+            <ion-icon primary name="md-checkbox-outline"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>运输</h4>
+            <p>说明占位</p>
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              运输：王五
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/01/01</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+          <div class="timeline-thumb bg-color-white timeline-icon">
+            <ion-icon primary name="md-checkbox-outline"></ion-icon>
+          </div>
+          <div class="timeline-item">
+            <h4>安装</h4>
+            <p>说明占位</p>
+            <div class="timeline-stats">
+              <ion-icon name="heart"></ion-icon>
+              安装：王五
+              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/01/01</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
