@@ -27,12 +27,12 @@ export class ContractCustomer {
     this.customerIdParam = params.get('customerIdParam');
 
     this.customerList = [
-      {"id": "010101", "customer": "客户1", "telephone": '12345678', "contacts": "联系人1", "sex": "ios-woman", "customeraddress": "客户1地址"},
-      {"id": "010102", "customer": "客户2", "telephone": '7654321', "contacts": "联系人2", "sex": "ios-man", "customeraddress": "客户2地址"},
-      {"id": "010103", "customer": "客户3", "telephone": '12345678', "contacts": "联系人3", "sex": "ios-man", "customeraddress": "客户3地址"},
-      {"id": "010111", "customer": "客户4", "telephone": '7895456564564', "contacts": "联系人4", "sex": "ios-woman", "customeraddress": "客户4地址"},
-      {"id": "010121", "customer": "客户5", "telephone": '12345678', "contacts": "联系人5", "sex": "ios-man", "customeraddress": "客户5地址"},
-      {"id": "010104", "customer": "客户6", "telephone": '12345678', "contacts": "联系人6", "sex": "ios-man", "customeraddress": "客户6地址"}
+      {"id": "010101", "customer": "鞍山矿业有限公司", "telephone": '12345678', "contacts": "联系人1", "sex": "ios-woman", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"},
+      {"id": "010102", "customer": "辽宁中国北方集团有限公司", "telephone": '7654321', "contacts": "联系人2", "sex": "ios-man", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"},
+      {"id": "010103", "customer": "鞍山百姓生活中心", "telephone": '12345678', "contacts": "联系人3", "sex": "ios-man", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"},
+      {"id": "010111", "customer": "鞍山生活馆", "telephone": '7895456564564', "contacts": "联系人4", "sex": "ios-woman", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"},
+      {"id": "010121", "customer": "鞍山铁东区政府", "telephone": '12345678', "contacts": "联系人5", "sex": "ios-man", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"},
+      {"id": "010104", "customer": "鞍山立山区政府", "telephone": '12345678', "contacts": "联系人6", "sex": "ios-man", "customeraddress": "辽宁省鞍山市铁东区湖南街34号"}
     ];
 
   }
