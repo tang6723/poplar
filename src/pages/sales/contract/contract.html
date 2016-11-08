@@ -20,19 +20,19 @@
     </ion-buttons>
 
     <ion-buttons end>
-      <button ion-button color="secondary" *ngIf="isCheck">
+      <button ion-button color="secondary" *ngIf="isCheck" (click)="presentContractTimelineModal('审批')">
         <ion-icon name="md-checkmark"></ion-icon>
       </button>
-      <button ion-button color="danger" *ngIf="isCharging" >
+      <button ion-button color="danger" *ngIf="isCharging" (click)="presentContractTimelineModal('收款')">
         <ion-icon name="logo-yen"></ion-icon>
       </button>
-      <button ion-button color="secondary" *ngIf="isStock">
+      <button ion-button color="secondary" *ngIf="isStock" (click)="presentContractTimelineModal('出库')">
         <ion-icon name="ios-clipboard-outline"></ion-icon>
       </button>
-      <button ion-button color="secondary" *ngIf="isTraffic">
+      <button ion-button color="secondary" *ngIf="isTraffic" (click)="presentContractTimelineModal('运输')">
         <ion-icon name="ios-car"></ion-icon>
       </button>
-      <button ion-button color="secondary" *ngIf="isInstall">
+      <button ion-button color="secondary" *ngIf="isInstall" (click)="presentContractTimelineModal('安装')">
         <ion-icon name="ios-build-outline"></ion-icon>
       </button>
     </ion-buttons>

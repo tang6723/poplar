@@ -3,6 +3,7 @@ import {NavController, ModalController} from 'ionic-angular';
 
 import {ContractGoods} from '../contract-goods/contract-goods';
 import {ContractCustomer} from '../contract-customer/contract-customer';
+import {ContractTimeline} from '../contract-timeline/contract-timeline';
 import {AppGlobal} from '../../../providers/app-global';
 
 /*
@@ -31,7 +32,6 @@ export class Contract {
   typeTmp: string;
   tracfficCost:number=2450;
   installCost:number=900;
-
 
   isBill:boolean=false;
   isCheck:boolean=false;
@@ -76,7 +76,7 @@ export class Contract {
       this.telephone=data.telephoneParam;
       this.customeraddress=data.customeraddressParam;
 
-      console.log(data.foo);
+      console.log(data.customerParam);
     });
     modal.present();
 
@@ -84,6 +84,17 @@ export class Contract {
 
   presentGoodsModal(){
     let modal=this.modalCtrl.create(ContractGoods);
+    modal.present();
+
+  }
+
+  presentContractTimelineModal(mytype:string){
+    this.typeTmp=mytype;
+    let modal=this.modalCtrl.create(ContractTimeline,{
+      id:this.billid,
+      type:this.typeTmp
+    });
+    console.log(this.typeTmp);
     modal.present();
 
   }
