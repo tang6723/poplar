@@ -6,11 +6,18 @@ import {Popover} from '../pages/home/popover/popover';
 import {Login} from '../pages/login/login';
 
 import {Contract} from '../pages/sales/contract/contract';
-import {ContractItem} from '../pages/sales/contract-item/contract-item';
-import {ContractList} from '../pages/sales/contract-list/contract-list';
-import {ContractTimeline} from '../pages/sales/contract-timeline/contract-timeline';
-import {ContractGoods} from '../pages/sales/contract-goods/contract-goods';
+import {ContractCharging} from '../pages/sales/contract-charging/contract-charging';
+import {ContractCheck} from '../pages/sales/contract-check/contract-check';
 import {ContractCustomer} from '../pages/sales/contract-customer/contract-customer';
+import {ContractGoods} from '../pages/sales/contract-goods/contract-goods';
+import {ContractInstall} from '../pages/sales/contract-install/contract-install';
+import {ContractItem} from '../pages/sales/contract-item/contract-item';
+import {ContractList} from '../pages/sales/contract-list/contract-list'
+import {ContractStock} from '../pages/sales/contract-stock/contract-stock';
+import {ContractTimeline} from '../pages/sales/contract-timeline/contract-timeline';
+import {ContractTraffic} from '../pages/sales/contract-traffic/contract-traffic';
+
+
 
 import {Bills} from '../pages/finance/bills/bills';
 import {BillsItem} from '../pages/finance/bills-item/bills-item';
@@ -54,11 +61,15 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
   declarations: [
     MyApp,
     Contract,
+    ContractCharging,
+    ContractCheck,
+    ContractCustomer,
+    ContractGoods,
+    ContractInstall,
     ContractItem,
     ContractList,
+    ContractStock,
     ContractTimeline,
-    ContractGoods,
-    ContractCustomer,
 
     Bills,
     BillsItem,
@@ -119,11 +130,15 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
   entryComponents: [
     MyApp,
     Contract,
+    ContractCharging,
+    ContractCheck,
+    ContractCustomer,
+    ContractGoods,
+    ContractInstall,
     ContractItem,
     ContractList,
+    ContractStock,
     ContractTimeline,
-    ContractGoods,
-    ContractCustomer,
 
     Bills,
     BillsItem,
