@@ -48,5 +48,21 @@ export class ContractTimeline {
     let data={'foo':'bar'};
     this.viewCtrl.dismiss(data);
   }
+  presentCheckModal(){
+    console.log('Hello presentModal Page');
+  }
+
+  presentChargingModal(){
+    console.log('Hello presentChargingModal Page');
+  }
+  presentStockModal(){
+    console.log('Hello presentStockModal Page');
+  }
+  presentTrafficModal(){
+    console.log('Hello presentTrafficModal Page');
+  }
+  presentInstallModal(){
+    console.log('Hello presentInstallModal Page');
+  }
 
 }

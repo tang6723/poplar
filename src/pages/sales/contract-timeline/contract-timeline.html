@@ -46,7 +46,7 @@
 
       <div class="divider-title">流程列表</div>
       <ul class="timeline">
-        <li>
+        <li (click)="presentCheckModal()">
           <div class="timeline-thumb bg-color-white timeline-icon">
             <ion-icon name="md-arrow-dropdown-circle" color="danger"></ion-icon>
           </div>
@@ -60,7 +60,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li (click)="presentChargingModal()">
           <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
           <div class="timeline-thumb bg-color-white timeline-icon">
             <ion-icon  name="md-checkbox-outline" color="primary"></ion-icon>
@@ -75,12 +75,12 @@
             </div>
           </div>
         </li>
-        <li>
+        <li (click)="presentStockModal()">
           <div class="timeline-thumb bg-color-white timeline-icon">
             <ion-icon   name="md-checkbox-outline" color="primary"></ion-icon>
           </div>
           <div class="timeline-item">
-            <h4>发票</h4>
+            <h4>出库</h4>
             <p>说明占位</p>
             <div class="timeline-stats">
               <ion-icon name="heart"></ion-icon>
@@ -89,21 +89,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="timeline-thumb bg-color-white timeline-icon">
-            <ion-icon  name="md-checkbox-outline" color="secondary"></ion-icon>
-          </div>
-          <div class="timeline-item">
-            <h4>出库</h4>
-            <p>说明占位，说明占位，说明占位，说明占位</p>
-            <div class="timeline-stats">
-              <ion-icon name="heart"></ion-icon>
-              出库：王五
-              <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2016/01/01</span>
-            </div>
-          </div>
-        </li>
-        <li>
+
+        <li (click)="presentTrafficModal()">
           <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
           <div class="timeline-thumb bg-color-white timeline-icon">
             <ion-icon  name="md-checkbox-outline" color="primary"></ion-icon>
@@ -118,7 +105,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li (click)="presentInstallModal()">
           <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
           <div class="timeline-thumb bg-color-white timeline-icon">
             <ion-icon  name="md-checkbox-outline" color="primary"></ion-icon>
