@@ -89,6 +89,7 @@ export class Contract {
   }
 
   presentContractTimelineModal(mytype:string){
+    /*
     this.typeTmp=mytype;
     let modal=this.modalCtrl.create(ContractTimeline,{
       id:this.billid,
@@ -96,6 +97,12 @@ export class Contract {
     });
     console.log(this.typeTmp);
     modal.present();
+    */
+    this.navCtrl.push(ContractTimeline,{
+      id:this.billid,
+      type:this.typeTmp
+
+    });
 
   }
 
