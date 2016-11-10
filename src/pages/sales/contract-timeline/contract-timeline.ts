@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import {NavController, ViewController, NavParams} from 'ionic-angular';
+import {NavController, ViewController, NavParams, ModalController} from 'ionic-angular';
 
+import {ContractCheck} from '../contract-check/contract-check';
+import {ContractCharging} from '../contract-charging/contract-charging';
+import {ContractStock} from '../contract-stock/contract-stock';
+import {ContractTraffic} from '../contract-traffic/contract-traffic';
+import {ContractInstall} from '../contract-install/contract-install';
 /*
   Generated class for the ContractTimeline page.
 
@@ -26,7 +31,7 @@ export class ContractTimeline {
   public secondParam:any;
   processList; any;
 
-  constructor(public navCtrl: NavController ,public viewCtrl: ViewController,public navParams: NavParams) {
+  constructor(public navCtrl: NavController ,public viewCtrl: ViewController,public navParams: NavParams,public modalCtrl: ModalController) {
     this.firstParam=navParams.get('id');
     this.secondParam=navParams.get('type');
 
@@ -49,20 +54,25 @@ export class ContractTimeline {
     this.viewCtrl.dismiss(data);
   }
   presentCheckModal(){
-    console.log('Hello presentModal Page');
+    let modal=this.modalCtrl.create(ContractCheck);
+    modal.present();
   }
 
   presentChargingModal(){
-    console.log('Hello presentChargingModal Page');
+    let modal=this.modalCtrl.create(ContractCharging);
+    modal.present();
   }
   presentStockModal(){
-    console.log('Hello presentStockModal Page');
+    let modal=this.modalCtrl.create(ContractStock);
+    modal.present();
   }
   presentTrafficModal(){
-    console.log('Hello presentTrafficModal Page');
+    let modal=this.modalCtrl.create(ContractTraffic);
+    modal.present();
   }
   presentInstallModal(){
-    console.log('Hello presentInstallModal Page');
+    let modal=this.modalCtrl.create(ContractInstall);
+    modal.present();
   }
 
 }

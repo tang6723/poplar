@@ -69,6 +69,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     ContractItem,
     ContractList,
     ContractStock,
+    ContractTraffic,
     ContractTimeline,
 
     Bills,
@@ -138,6 +139,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     ContractItem,
     ContractList,
     ContractStock,
+    ContractTraffic,
     ContractTimeline,
 
     Bills,
