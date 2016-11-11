@@ -56,6 +56,7 @@ import {ReportProfit} from '../pages/setting/report-profit/report-profit';
 
 import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
+import {OrderSupplier} from "../pages/purchase/order-supplier/order-supplier";
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     OrderList,
     OrderTimeline,
     OrderGoods,
+    OrderSupplier,
 
     SettingHome,
     Customer,
@@ -159,6 +161,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     OrderList,
     OrderTimeline,
     OrderGoods,
+    OrderSupplier,
 
     SettingHome,
     Customer,
