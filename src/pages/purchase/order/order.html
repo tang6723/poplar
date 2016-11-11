@@ -6,13 +6,106 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>order</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>采购合同</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-buttons start *ngIf="isBill">
+      <button ion-button color="primary" (click)="presentCustomerModal()">
+        <ion-icon name="md-person-add"></ion-icon>
+      </button>
+      <button ion-button color="primary" (click)="presentGoodsModal()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button color="secondary" *ngIf="isCheck" (click)="presentContractTimelineModal('审批')">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+      <button ion-button color="danger" *ngIf="isCharging" (click)="presentContractTimelineModal('收款')">
+        <ion-icon name="logo-yen"></ion-icon>
+      </button>
+      <button ion-button color="secondary" *ngIf="isStock" (click)="presentContractTimelineModal('出库')">
+        <ion-icon name="ios-clipboard-outline"></ion-icon>
+      </button>
+      <button ion-button color="secondary" *ngIf="isTraffic" (click)="presentContractTimelineModal('运输')">
+        <ion-icon name="ios-car"></ion-icon>
+      </button>
+      <button ion-button color="secondary" *ngIf="isInstall" (click)="presentContractTimelineModal('安装')">
+        <ion-icon name="ios-build-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
+<ion-content >
 
-<ion-content padding>
+  <ion-list inset>
+    <ion-item-divider>
+      <h5 item-left >合计：￥<span color="danger">{{billtotal+tracfficCost+installCost}}</span>元</h5>
+      <ion-badge item-right>{{billstate}}</ion-badge>
+    </ion-item-divider>
+    <ion-item>
+      <ion-icon name="ios-contacts" primary item-left></ion-icon>
+      <h2>{{customer}}</h2>
+      <h5>{{contacts}}      {{telephone}}</h5>
+      <p>{{customeraddress}}</p>
+    </ion-item>
+    <ion-item-divider>
+      商品明细
+    </ion-item-divider>
+    <ion-item *ngFor="let item of items">
+      <h2>{{item.name}}</h2>
+      <h3>{{item.specification}}</h3>
+
+      <ion-row>
+        <ion-col  text-left>
+          单价<span color="danger">￥{{item.price}}</span>
+        </ion-col>
+        <ion-col center text-center>
+          数量<span item-right color="primary">{{item.num}}</span>
+        </ion-col>
+        <ion-col center text-right>
+          小计<span item-right color="danger">{{item.num*item.price}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col><h2>商品总额: </h2></ion-col>
+        <ion-col text-right><h2> <span color="danger">{{billtotal}}</span></h2></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><P>+运费: </P></ion-col>
+        <ion-col text-right><h2> <span color="danger">{{tracfficCost}}</span></h2></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><P>+安装费: </P></ion-col>
+        <ion-col text-right><h2> <span  color="danger">{{installCost}}</span></h2></ion-col>
+      </ion-row>
+
+    </ion-item>
+
+
+  </ion-list>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h5 item-right>合计：￥<span color="danger">{{billtotal+tracfficCost+installCost}}</span>元</h5>
+    <ion-buttons end>
+      <button ion-button icon-left >
+        <ion-icon name="ios-checkbox-outline"></ion-icon>
+        保存
+      </button>
+      <button ion-button round outline color="danger">
+        <ion-icon name="send"></ion-icon>
+        提交
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
