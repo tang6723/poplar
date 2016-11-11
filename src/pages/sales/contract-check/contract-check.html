@@ -7,13 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>contract-check</ion-title>
+    <ion-title>审批</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card color="primary">
+    <ion-card-header color="primary">销售审批</ion-card-header>
+    <ion-card-content>
+      <ion-item>合同编号：{{billid}}</ion-item>
+      <ion-item>合同总价：{{billtotal}}</ion-item>
+      <ion-item>销售员：{{billstate}}</ion-item>
+      <ion-item>合同状态：{{billstate}}</ion-item>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-list inset>
+    <ion-list-header primary>
+      ddd
+    </ion-list-header>
+    <ion-item>合同编号：{{billid}}</ion-item>
+    <ion-item>合同总价：{{billtotal}}</ion-item>
+    <ion-item>销售员：{{billstate}}</ion-item>
+    <ion-item>合同状态：{{billstate}}</ion-item>
+
+
+  </ion-list>
 
 </ion-content>
 
