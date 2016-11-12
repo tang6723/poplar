@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 
 import {BillsList} from '../bills-list/bills-list';
+import {BillsItem} from '../bills-item/bills-item';
 /*
   Generated class for the Bills page.
 
@@ -16,10 +17,16 @@ export class Bills {
 
   billsList=BillsList;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController ,public modalCtrl: ModalController) {}
 
   ionViewDidLoad() {
     console.log('Hello Bills Page');
+  }
+
+  presentBillsModal(){
+    let modal=this.modalCtrl.create(BillsItem);
+    modal.present();
+
   }
 
 }
