@@ -17,6 +17,14 @@ import {OrderStorage} from '../order-storage/order-storage';
   templateUrl: 'order-timeline.html'
 })
 export class OrderTimeline {
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:string ="30，380.00";
+  freight:string ="0.00";
+  dateissue:string ="2016年9月3日";
+  customer:string ="鞍山汽贸";
+  telephone:string ="13599915899";
+  customeraddress:string ="辽宁省鞍山市铁东区湖南街34号";
 
   constructor(public navCtrl: NavController,public modalCtrl: ModalController) {}
 
