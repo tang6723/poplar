@@ -23,7 +23,7 @@ export class ContractCustomer {
   customerList: any;
 
 
-  constructor(public navCtrl: NavController ,public viewCtrl: ViewController,params: NavParams) {
+  constructor(public navCtrl: NavController ,public viewCtrl: ViewController,public params: NavParams) {
     this.customerIdParam = params.get('customerIdParam');
 
     this.customerList = [
