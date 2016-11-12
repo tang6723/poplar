@@ -7,12 +7,50 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>order-goods</ion-title>
+    <ion-title>选择采购商品</ion-title>
   </ion-navbar>
+  <ion-toolbar >
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item *ngFor="let item of goodsItems">
+      <h2>{{item.name}}</h2>
+      <h3>{{item.specification}}</h3>
+
+      <ion-row>
+        <ion-col  text-left>
+          单价<span color="danger">￥{{item.price}}</span>
+        </ion-col>
+        <ion-col center text-center>
+          数量<span item-right color="primary">{{item.num}}</span>
+        </ion-col>
+        <ion-col center text-right>
+          选择
+          <span item-right color="danger"><input type="checkbox" primary style="width:24px;height: 20px;" /> </span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="dismiss()">
+        <ion-icon name="md-close-circle"></ion-icon>
+        取消
+      </button>
+      <button ion-button icon-left round outline color="danger" (click)="dismiss()">
+        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+        确定
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

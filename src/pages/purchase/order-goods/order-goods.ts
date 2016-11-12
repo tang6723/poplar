@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
 
 /*
   Generated class for the OrderGoods page.
@@ -13,10 +13,40 @@ import { NavController } from 'ionic-angular';
 })
 export class OrderGoods {
 
-  constructor(public navCtrl: NavController) {}
+  items: string[];
+
+  goodsItems: any = [
+    {imgurl: 'ios-flag-outline',id: '123456', name: 'Apple MacBook Air 13.3英寸笔记本电脑 ', price: 200.00, num: 3, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flame-outline',id: '123457', name: 'Apple MacBook Air ', price: 1120.00, num: 9, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123458', name: '商品3 Apple MacBook Air ', price: 280.00, num: 6, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123459', name: 'Apple MacBook Air ', price: 2450.23, num: 15, specification: '规格13.3英寸笔记本'},
+    {imgurl: 'ios-flash-outline',id: '123460', name: 'Apple MacBook Air ', price: 900, num: 30, specification: '规格13.3英寸笔记本'}
+  ];
+
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
     console.log('Hello OrderGoods Page');
+  }
+
+  dismiss(){
+    let data={'foo':'bar'};
+    this.viewCtrl.dismiss(data);
+  }
+
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    //this.initializeItems();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
 }
