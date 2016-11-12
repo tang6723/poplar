@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {Expense} from '../expense/expense';
 /*
   Generated class for the ExpenseList page.
 
@@ -40,6 +41,11 @@ export class ExpenseList {
 
   ionViewDidLoad() {
     console.log('Hello ExpenseList Page');
+  }
+
+  itemSelected(item: any)
+  {
+    this.navCtrl.push(Expense, {item});
   }
 
   getItems(ev: any) {

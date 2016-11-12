@@ -95,7 +95,7 @@ export class BillsList {
 
   itemSelected(item: any)
   {
-    this.navCtrl.push(Bills, {});
+    this.navCtrl.push(Bills, {item});
   }
 
   getItems(ev: any) {

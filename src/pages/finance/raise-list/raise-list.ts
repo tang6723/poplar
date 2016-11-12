@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {Raise} from '../raise/raise';
 /*
   Generated class for the RaiseList page.
 
@@ -40,6 +41,11 @@ export class RaiseList {
 
   ionViewDidLoad() {
     console.log('Hello RaiseList Page');
+  }
+
+  itemSelected(item: any)
+  {
+    this.navCtrl.push(Raise, {item});
   }
 
   getItems(ev: any) {
