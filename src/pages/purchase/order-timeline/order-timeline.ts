@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 
+import {OrderCheck} from '../order-check/order-check';
+import {OrderInspection} from '../order-inspection/order-inspection';
+import {OrderPayment} from '../order-payment/order-payment';
+import {OrderStock} from '../order-stock/order-stock';
+import {OrderStorage} from '../order-storage/order-storage';
 /*
   Generated class for the OrderTimeline page.
 
@@ -13,10 +18,31 @@ import { NavController } from 'ionic-angular';
 })
 export class OrderTimeline {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {}
 
   ionViewDidLoad() {
     console.log('Hello OrderTimeline Page');
+  }
+  presentCheckModal(){
+    let modal=this.modalCtrl.create(OrderCheck);
+    modal.present();
+  }
+
+  presentInspectionModal(){
+    let modal=this.modalCtrl.create(OrderInspection);
+    modal.present();
+  }
+  presentPaymentModal(){
+    let modal=this.modalCtrl.create(OrderPayment);
+    modal.present();
+  }
+  presentStockModal(){
+    let modal=this.modalCtrl.create(OrderStock);
+    modal.present();
+  }
+  presentStorageModal(){
+    let modal=this.modalCtrl.create(OrderStorage);
+    modal.present();
   }
 
 }

@@ -32,10 +32,17 @@ import {RaiseItem} from '../pages/finance/raise-item/raise-item';
 import {RaiseList} from '../pages/finance/raise-list/raise-list';
 
 import {Order} from '../pages/purchase/order/order';
+import {OrderCheck} from '../pages/purchase/order-check/order-check';
+import {OrderGoods} from '../pages/purchase/order-goods/order-goods';
+import {OrderInspection} from '../pages/purchase/order-inspection/order-inspection';
 import {OrderItem} from '../pages/purchase/order-item/order-item';
 import {OrderList} from '../pages/purchase/order-list/order-list';
+import {OrderPayment} from '../pages/purchase/order-payment/order-payment';
+import {OrderStock} from '../pages/purchase/order-stock/order-stock';
+import {OrderStorage} from '../pages/purchase/order-storage/order-storage';
+import {OrderSupplier} from "../pages/purchase/order-supplier/order-supplier";
 import {OrderTimeline} from '../pages/purchase/order-timeline/order-timeline';
-import {OrderGoods} from '../pages/purchase/order-goods/order-goods';
+
 
 import {SettingHome} from '../pages/setting/setting-home/setting-home';
 import {Customer} from '../pages/setting/customer/customer';
@@ -56,7 +63,7 @@ import {ReportProfit} from '../pages/setting/report-profit/report-profit';
 
 import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
-import {OrderSupplier} from "../pages/purchase/order-supplier/order-supplier";
+
 
 @NgModule({
   declarations: [
@@ -86,11 +93,16 @@ import {OrderSupplier} from "../pages/purchase/order-supplier/order-supplier";
     RaiseList,
 
     Order,
+    OrderCheck,
+    OrderGoods,
+    OrderInspection,
     OrderItem,
     OrderList,
-    OrderTimeline,
-    OrderGoods,
+    OrderPayment,
+    OrderStock,
+    OrderStorage,
     OrderSupplier,
+    OrderTimeline,
 
     SettingHome,
     Customer,
@@ -157,11 +169,16 @@ import {OrderSupplier} from "../pages/purchase/order-supplier/order-supplier";
     RaiseList,
 
     Order,
+    OrderCheck,
+    OrderGoods,
+    OrderInspection,
     OrderItem,
     OrderList,
-    OrderTimeline,
-    OrderGoods,
+    OrderPayment,
+    OrderStock,
+    OrderStorage,
     OrderSupplier,
+    OrderTimeline,
 
     SettingHome,
     Customer,
