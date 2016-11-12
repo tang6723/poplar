@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {Bills} from '../bills/bills';
 /*
   Generated class for the BillsList page.
 
@@ -90,6 +91,11 @@ export class BillsList {
 
   ionViewDidLoad() {
     console.log('Hello BillsList Page');
+  }
+
+  itemSelected(item: any)
+  {
+    this.navCtrl.push(Bills, {});
   }
 
   getItems(ev: any) {

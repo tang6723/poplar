@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
 
 /*
   Generated class for the BillsItem page.
@@ -13,10 +13,14 @@ import { NavController } from 'ionic-angular';
 })
 export class BillsItem {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
     console.log('Hello BillsItem Page');
+  }
+  dismiss(){
+    let data={'customerIdParam':'3','customerParam':'鞍山技术学校','contactsParam':'马蓉','telephoneParam':'1233333'};
+    this.viewCtrl.dismiss(data);
   }
 
 }
