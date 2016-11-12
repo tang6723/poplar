@@ -22,21 +22,19 @@
     <ion-item>合同总价：{{billtotal}}</ion-item>
     <ion-item>销售员：{{billstate}}</ion-item>
     <ion-item>合同状态：{{billstate}}</ion-item>
-    <ion-item-divider color="primary">审批情况</ion-item-divider>
 
+    <ion-item-divider color="primary">审批情况</ion-item-divider>
     <ion-item>
       <ion-label floating>审批意见</ion-label>
       <ion-textarea  rows="2"></ion-textarea>
     </ion-item>
-    <ion-item color="primary">
-      <ion-row>
-        <ion-col>
-          驳回<span item-right color="danger"><input type="checkbox" primary style="width:20px;height: 20px;" /> </span>
-        </ion-col>
-        <ion-col>
-          同意<span item-right color="danger"><input type="checkbox" primary style="width:20px;height: 20px;" /> </span>
-        </ion-col>
-      </ion-row>
+    <ion-item >
+      <ion-label> 驳回</ion-label>
+      <ion-toggle  checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item >
+      <ion-label> 同意</ion-label>
+      <ion-toggle  checked="true"></ion-toggle>
     </ion-item>
     <ion-item ></ion-item>
 

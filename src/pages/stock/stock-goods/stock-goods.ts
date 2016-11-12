@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {StockGoodsList} from '../stock-goods-list/stock-goods-list';
 /*
   Generated class for the StockGoods page.
 
@@ -12,6 +13,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'stock-goods.html'
 })
 export class StockGoods {
+  stockGoodsList=StockGoodsList;
 
   constructor(public navCtrl: NavController) {}
 
