@@ -48,7 +48,9 @@ export class ContractStock {
     {imgurl: 'ios-flash-outline',id: '123460', name: 'Apple MacBook Air ', price: 900, num: 30, specification: '规格13.3英寸笔记本'}
   ];
 
-  constructor(public navCtrl: NavController ,public modalCtrl: ModalController) {
+
+
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {
     this.appInstance=AppGlobal.getInstance();
     this.isBill=this.appInstance.isBill;
     this.isCheck=this.appInstance.isCheck;
@@ -58,13 +60,13 @@ export class ContractStock {
     this.isInstall=this.appInstance.isInstall;
     this.isRaise=this.appInstance.isRaise;
     this.isSetting=this.appInstance.isSetting;
-  }
 
-  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
+  }
 
   ionViewDidLoad() {
     console.log('Hello ContractCheck Page');
   }
+
   dismiss(){
     let data={'customerIdParam':'3','customerParam':'鞍山技术学校','contactsParam':'马蓉','telephoneParam':'1233333'};
     this.viewCtrl.dismiss(data);
