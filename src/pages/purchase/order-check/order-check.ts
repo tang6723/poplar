@@ -13,10 +13,14 @@ import {NavController, ViewController} from 'ionic-angular';
 })
 export class OrderCheck {
 
-  constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {}
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
+
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
-    console.log('Hello OrderCheck Page');
+    console.log('Hello ContractCheck Page');
   }
   dismiss(){
     let data={'customerIdParam':'3','customerParam':'鞍山技术学校','contactsParam':'马蓉','telephoneParam':'1233333'};
