@@ -15,7 +15,13 @@ import {StockGoodsList} from '../stock-goods-list/stock-goods-list';
 export class StockGoods {
   stockGoodsList=StockGoodsList;
 
-  constructor(public navCtrl: NavController) {}
+  goodsName : String;
+  goodsID: String;
+
+  constructor(public navCtrl: NavController) {
+    this.goodsName="鼠标";
+    this.goodsID="X2130";
+  }
 
   ionViewDidLoad() {
     console.log('Hello StockGoods Page');
