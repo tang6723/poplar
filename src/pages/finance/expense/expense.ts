@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {ExpenseList} from '../expense-list/expense-list';
 /*
   Generated class for the Expense page.
 
@@ -12,6 +13,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'expense.html'
 })
 export class Expense {
+
+  expenseList=ExpenseList;
 
   constructor(public navCtrl: NavController) {}
 

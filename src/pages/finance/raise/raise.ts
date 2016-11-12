@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {RaiseList} from '../raise-list/raise-list';
 /*
   Generated class for the Raise page.
 
@@ -12,6 +13,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'raise.html'
 })
 export class Raise {
+
+  raiseList=RaiseList;
 
   constructor(public navCtrl: NavController) {}
 
