@@ -9,6 +9,13 @@
   <ion-navbar color="primary">
     <ion-title>支出表</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="report">
+      <ion-segment-button value="profitType">分类</ion-segment-button>
+      <ion-segment-button value="profitMonth">月度</ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
 
 </ion-header>
 

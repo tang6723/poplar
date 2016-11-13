@@ -14,7 +14,7 @@ import { NavController } from 'ionic-angular';
 export class ReportPayout {
 
   public myDate:string;
-  report: string = "profitType";
+  report: string = "reportType";
 
   constructor(public navCtrl: NavController) {
     this.myDate = new Date().toISOString();

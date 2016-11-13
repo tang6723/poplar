@@ -11,9 +11,9 @@
   </ion-navbar>
   <ion-toolbar>
     <ion-segment [(ngModel)]="report">
-      <ion-segment-button value="profitType">分类</ion-segment-button>
-      <ion-segment-button value="profitMonth">月度</ion-segment-button>
-      <ion-segment-button value="profitQuater">季度</ion-segment-button>
+      <ion-segment-button value="reportType" (ionSelect)="selectClass()">分类</ion-segment-button>
+      <ion-segment-button value="reportMonth" (ionSelect)="selectMonth()">月度</ion-segment-button>
+      <ion-segment-button value="reportQuarter" (ionSelect)="selectQuarter()">季度</ion-segment-button>
 
     </ion-segment>
   </ion-toolbar>
@@ -33,4 +33,54 @@
     </ion-datetime>
   </ion-item>
 
+  <div [ngSwitch]="report">
+
+    <ion-list inset *ngSwitchCase="'reportType'">
+      <ion-item *ngFor="let item of classList">
+        <ion-row>
+          <ion-col width-50 style="font-size: 9px; text-align: left;">{{item.name}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: center; color: green">{{item.sum}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: right;">{{item.percent}}</ion-col>
+        </ion-row>
+      </ion-item>
+
+
+    </ion-list>
+
+    <ion-list inset *ngSwitchCase="'reportMonth'">
+      <ion-item *ngFor="let item of monthList">
+        <ion-row>
+          <ion-col width-50 style="font-size: 9px; text-align: left;">{{item.date}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: center; color: green">{{item.sum}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: right;">{{item.percent}}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <ion-list inset *ngSwitchCase="'reportQuarter'">
+      <ion-item *ngFor="let item of quaterList">
+        <ion-row>
+          <ion-col width-50 style="font-size: 9px; text-align: left;">{{item.date}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: center; color: green">{{item.sum}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: right;">{{item.percent}}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+
+
+  </div>
+
 </ion-content>
+
+<ion-footer>
+  <div [hidden]="!isValidClass">
+    <ion-label item-left text-left>分类总计：￥{{totalSum}}</ion-label>
+  </div>
+  <div [hidden]="!isValidMonth">
+    <ion-label item-left text-left>月总计：￥{{totalSumMonth}}</ion-label>
+  </div>
+  <div [hidden]="!isValidQuater">
+    <ion-label item-left text-left>季度总计：￥{{totalSumMonth}}</ion-label>
+  </div>
+</ion-footer>
