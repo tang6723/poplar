@@ -16,6 +16,11 @@ import {BillsItem} from '../bills-item/bills-item';
 export class Bills {
 
   billsList=BillsList;
+  chargingType:string;
+
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
 
   constructor(public navCtrl: NavController ,public modalCtrl: ModalController) {}
 
