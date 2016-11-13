@@ -7,13 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>contract-traffic</ion-title>
+    <ion-title>运输</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list inset>
+    <ion-item-divider color="primary">合同信息</ion-item-divider>
+
+    <ion-item>合同编号：{{billid}}</ion-item>
+    <ion-item>合同总价：{{billtotal}}</ion-item>
+    <ion-item>销售员：{{billstate}}</ion-item>
+    <ion-item>合同状态：{{billstate}}</ion-item>
+
+    <ion-item-divider color="primary">运输情况</ion-item-divider>
+    <ion-item>
+      <ion-label floating>送货人员：</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>联系电话：</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>送货时间：</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>送货情况：</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
 
