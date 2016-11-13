@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {CustomerList} from '../customer-list/customer-list';
 
 /*
   Generated class for the Customer page.
@@ -19,4 +20,8 @@ export class Customer {
     console.log('Hello Customer Page');
   }
 
+  popCustomerList()
+  {
+    this.navCtrl.push(CustomerList, {});
+  }
 }

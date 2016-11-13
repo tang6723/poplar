@@ -6,13 +6,81 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>goods</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>库存商品</ion-title>
   </ion-navbar>
+
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button color="primary">
+        <ion-icon name="md-add-circle"></ion-icon>
+        增加
+      </button>
+      <button ion-button color="primary">
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        修改
+      </button>
+      <button ion-button color="primary">
+        <ion-icon name="md-close-circle"></ion-icon>
+        下架
+      </button>
+
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button color="primary" [navPush]="stockGoodsList">
+        <ion-icon name="ios-more"></ion-icon>
+        列表
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list inset>
+    <ion-item>
+      <ion-label  floating>商品名称</ion-label>
+      <ion-textarea  rows="2">{{goodsName}}</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>商品分类</ion-label>
+      <ion-select okText="确定" cancelText="取消" >
+        <ion-option value="分类一">分类1</ion-option>
+        <ion-option value="分类二">分类2</ion-option>
+        <ion-option value="分类三">分类3</ion-option>
+        <ion-option value="分类四">分类4</ion-option>
+        <ion-option value="分类五">分类5</ion-option>
+        <ion-option value="分类六">分类6</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>商品型号</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>商品单价</ion-label>
+      <ion-textarea  rows="1"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>商品单位</ion-label>
+      <ion-textarea  rows="1">{{goodsID}}</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>库存数量</ion-label>
+      <ion-textarea  rows="1"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  floating>商品说明</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item></ion-item>
+
+
+
+  </ion-list>
 
 </ion-content>

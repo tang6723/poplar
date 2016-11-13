@@ -7,12 +7,79 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>human</ion-title>
+    <ion-navbar primary>
+      <ion-title style="text-align: center">人力资源</ion-title>
+      <ion-buttons end>
+        <button royal (click)="pushhumanlist()">
+          <ion-icon name="ios-more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+            添加
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-checkbox-outline"></ion-icon>
+            保存
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-arrow-dropdown-outline"></ion-icon>
+            下架
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-backspace-outline"></ion-icon>
+            返回
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  floating>资源名称</ion-label>
+      <ion-textarea  rows="2">{{goodsName}}</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>劳务分类</ion-label>
+      <ion-select okText="确定" cancelText="取消" [(ngModel)]="gaming">
+        <ion-option value="咨询">咨询</ion-option>
+        <ion-option value="中介">中介</ion-option>
+        <ion-option value="安装">安装</ion-option>
+        <ion-option value="质检">质检</ion-option>
+        <ion-option value="修理">修理</ion-option>
+        <ion-option value="制造">制造</ion-option>
+        <ion-option value="运输">运输、装卸、包装</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>单价</ion-label>
+      <ion-textarea  rows="1">元/小时</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>单位</ion-label>
+      <ion-textarea  rows="1">1</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>说明</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

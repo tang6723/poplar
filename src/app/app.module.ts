@@ -57,7 +57,7 @@ import {Events} from '../pages/setting/events/events';
 import {EventsList} from '../pages/setting/events-list/events-list';
 import {Goods} from '../pages/setting/goods/goods';
 import {GoodsList} from '../pages/setting/goods-list/goods-list';
-import {Human} from '../pages/setting/human/human';
+import {HumanPage} from '../pages/setting/human/human';
 import {HumanList} from '../pages/setting/human-list/human-list';
 import {ReportAsset} from '../pages/setting/report-asset/report-asset';
 import {ReportBalance} from '../pages/setting/report-balance/report-balance';
@@ -121,7 +121,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     EventsList,
     Goods,
     GoodsList,
-    Human,
+    HumanPage,
     HumanList,
     ReportAsset,
     ReportBalance,
@@ -201,7 +201,7 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     EventsList,
     Goods,
     GoodsList,
-    Human,
+    HumanPage,
     HumanList,
     ReportAsset,
     ReportBalance,

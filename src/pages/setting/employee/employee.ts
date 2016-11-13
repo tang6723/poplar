@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {EmployeeList} from '../employee-list/employee-list';
 
 /*
   Generated class for the Employee page.
@@ -17,6 +18,12 @@ export class Employee {
 
   ionViewDidLoad() {
     console.log('Hello Employee Page');
+  }
+
+
+  pushemployeelist()
+  {
+    this.navCtrl.push(EmployeeList, {});
   }
 
 }

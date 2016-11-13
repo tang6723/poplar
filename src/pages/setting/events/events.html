@@ -1,18 +1,72 @@
 <!--
-  Generated template for the Events page.
+  Generated template for the EventsPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>events</ion-title>
+  <ion-navbar primary>
+    <ion-title style="text-align: center">事件</ion-title>
+    <ion-buttons end>
+      <button royal (click)="pushhumanlist()">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+            添加
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-checkbox-outline"></ion-icon>
+            保存
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-arrow-dropdown-outline"></ion-icon>
+            下架
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-backspace-outline"></ion-icon>
+            刷新
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>事件名称</ion-label>
+      <ion-select [(ngModel)]="eventtype" okText="确定" cancelText="取消"(ionChange)="eventChange($event)">
+        <ion-option *ngFor="let eventitem of eventList" value="{{eventitem.eventvalue}}">
+          {{eventitem.eventtext}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item-divider primary>{{billTime1}}</ion-item-divider>
+    <ion-item *ngFor="let myitem of eventData" (click)="itemSelected(myitem)">
+      <<ion-icon name="bluetooth" item-left color="primary"></ion-icon>
+      <ion-label>{{myitem.eventtext}}</ion-label>
+      <ion-note item-right>{{myitem.eventvalue}}</ion-note>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

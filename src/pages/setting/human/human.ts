@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {HumanList} from '../human-list/human-list';
 
 /*
   Generated class for the Human page.
@@ -11,12 +12,15 @@ import { NavController } from 'ionic-angular';
   selector: 'page-human',
   templateUrl: 'human.html'
 })
-export class Human {
+export class HumanPage {
 
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello Human Page');
   }
-
+  pushhumanlist()
+  {
+    this.navCtrl.push(HumanList, {});
+  }
 }
