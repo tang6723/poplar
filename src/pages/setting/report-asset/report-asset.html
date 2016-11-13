@@ -6,8 +6,8 @@ ionic<!--
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>report-asset</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>资产负债表</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,77 @@ ionic<!--
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item-divider>资产</ion-item-divider>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left primary></ion-icon>
+      <ion-label>股本</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left danger></ion-icon>
+      <ion-label>分红</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left dark></ion-icon>
+      <ion-label>现金</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left primary></ion-icon>
+      <ion-label>银行</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left dark></ion-icon>
+      <ion-label>支付平台</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left primary></ion-icon>
+      <ion-label>应收款</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left dark></ion-icon>
+      <ion-label>库存商品</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left primary></ion-icon>
+      <ion-label>固定资产</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left dark></ion-icon>
+      <ion-label>待摊费用</ion-label>
+      <ion-label secondary item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+
+    <ion-item-divider>负债</ion-item-divider>
+    <ion-item>
+      <<ion-icon name="bluetooth" item-left danger></ion-icon>
+      <ion-label>应付款</ion-label>
+      <ion-label danger item-right text-right>￥{{asset}}</ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+
+<ion-footer color="primary">
+  <ion-row>
+    <ion-col >
+      资产：￥{{asset}}
+    </ion-col>
+    <ion-col  text-right>
+      负债：￥{{asset}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-right>
+      <ion-label item-right text-right>净资产：<span danger>￥{{asset}}</span></ion-label>
+    </ion-col>
+  </ion-row>
+</ion-footer>
