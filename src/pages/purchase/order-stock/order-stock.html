@@ -7,13 +7,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>order-stock</ion-title>
+    <ion-title>入库</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list inset>
+    <ion-item-divider color="primary">合同信息</ion-item-divider>
+
+    <ion-item>合同编号：{{billid}}</ion-item>
+    <ion-item>合同总价：{{billtotal}}</ion-item>
+    <ion-item>采购员：{{billstate}}</ion-item>
+    <ion-item>合同状态：{{billstate}}</ion-item>
+
+    <ion-item-divider>
+      商品明细
+    </ion-item-divider>
+    <ion-item *ngFor="let item of items">
+      <h2>{{item.name}}</h2>
+      <h3>{{item.specification}}</h3>
+
+      <ion-row>
+        <ion-col  text-left>
+          单价<span color="danger">￥{{item.price}}</span>
+        </ion-col>
+        <ion-col center text-center>
+          数量<span item-right color="primary">{{item.num}}</span>
+        </ion-col>
+        <ion-col center text-right>
+          入库<span item-right color="danger"><input type="checkbox" primary style="width:24px;height: 20px;" /> </span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
 
