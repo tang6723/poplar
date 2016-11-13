@@ -98,6 +98,7 @@ export class Contract {
     console.log(this.typeTmp);
     modal.present();
     */
+    this.typeTmp=mytype;
     this.navCtrl.push(ContractTimeline,{
       id:this.billid,
       type:this.typeTmp

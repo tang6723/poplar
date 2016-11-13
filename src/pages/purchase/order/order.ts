@@ -97,6 +97,7 @@ export class Order {
      console.log(this.typeTmp);
      modal.present();
      */
+    this.typeTmp=mytype;
     this.navCtrl.push(OrderTimeline, {
       id: this.billid,
       type: this.typeTmp

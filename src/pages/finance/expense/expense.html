@@ -28,6 +28,12 @@
     </ion-buttons>
 
     <ion-buttons end>
+      <button ion-button color="secondary" *ngIf="isCheck" (click)="pushExpenseItem('审批')">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+      <button ion-button color="danger" *ngIf="isCharging" (click)="pushExpenseItem('收款')">
+        <ion-icon name="logo-yen"></ion-icon>
+      </button>
       <button ion-button color="primary" [navPush]="expenseList">
         <ion-icon name="ios-more"></ion-icon>
         列表
