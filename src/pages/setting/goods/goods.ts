@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {StockGoodsList} from "../../stock/stock-goods-list/stock-goods-list";
 
 /*
   Generated class for the Goods page.
@@ -12,8 +13,14 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'goods.html'
 })
 export class Goods {
+  stockGoodsList=StockGoodsList;
+  goodsName : String;
+  goodsID: String;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+    this.goodsName="鼠标";
+    this.goodsID="X2130";
+  }
 
   ionViewDidLoad() {
     console.log('Hello Goods Page');

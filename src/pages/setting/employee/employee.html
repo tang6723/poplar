@@ -1,18 +1,92 @@
 <!--
-  Generated template for the Employee page.
+  Generated template for the EmployeePage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>employee</ion-title>
+  <ion-navbar primary>
+    <ion-title style="text-align: center">员工设置</ion-title>
+    <ion-buttons end>
+      <button royal (click)="pushemployeelist()">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+            添加
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-checkbox-outline"></ion-icon>
+            保存
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-arrow-dropdown-outline"></ion-icon>
+            下架
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="ios-backspace-outline"></ion-icon>
+            返回
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  floating>员工姓名</ion-label>
+      <ion-textarea  rows="2">{{goodsName}}</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>员工性别</ion-label>
+      <ion-select okText="确定" cancelText="取消" [(ngModel)]="gaming">
+        <ion-option value="男">男</ion-option>
+        <ion-option value="女">女</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>员工职务</ion-label>
+      <ion-select okText="确定" cancelText="取消" [(ngModel)]="gaming">
+        <ion-option value="销售">销售</ion-option>
+        <ion-option value="采购">采购</ion-option>
+        <ion-option value="库管">库管</ion-option>
+        <ion-option value="会计">会计</ion-option>
+        <ion-option value="主管">主管</ion-option>
+        <ion-option value="经理">经理</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>身份证号</ion-label>
+      <ion-textarea  rows="1">元/小时</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>联系电话</ion-label>
+      <ion-textarea  rows="1">1</ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating>说明</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

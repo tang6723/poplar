@@ -6,13 +6,71 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>goods-list</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      <ion-icon [name]="myIcon"></ion-icon>
+      商品列表
+    </ion-title>
   </ion-navbar>
+  <ion-toolbar >
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
+  <ion-list inset>
+    <ion-item-divider primary>{{billTime1}} </ion-item-divider>
+    <ion-item *ngFor="let item of goodsItems1" (click)="editGoods(item)">
+      <ion-row>
+        <ion-col width-62>
+          <h2>{{item.name}}</h2>
+        </ion-col>
+        <ion-col width-38 text-right>
+          单价：￥<span color="danger">{{item.price}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-note>{{item.specification}}</ion-note>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-badge>{{item.num}}</ion-badge>
+        </ion-col>
+        <ion-col center text-right>
+          <span item-right color="primary">{{item.goodsstate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item-divider primary>{{billTime2}} </ion-item-divider>
+    <ion-item *ngFor="let item of goodsItems2" (click)="editGoods(item)">
+      <ion-row>
+        <ion-col width-67>
+          <h2>{{item.name}}</h2>
+        </ion-col>
+        <ion-col width-33>
+          单价：￥<span color="danger">{{item.price}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-note>{{item.specification}}</ion-note>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-badge>{{item.num}}</ion-badge>
+        </ion-col>
+        <ion-col center text-right>
+          <span item-right color="primary">{{item.goodsstate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>
+
