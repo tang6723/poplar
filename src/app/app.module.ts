@@ -25,9 +25,13 @@ import {BillsList} from '../pages/finance/bills-list/bills-list';
 import {Charging} from '../pages/finance/charging/charging';
 import {ChargingList} from '../pages/finance/charging-list/charging-list';
 import {Expense} from '../pages/finance/expense/expense';
+import {ExpenseCharging} from '../pages/finance/expense-charging/expense-charging';
+import {ExpenseCheck} from '../pages/finance/expense-check/expense-check';
 import {ExpenseItem} from '../pages/finance/expense-item/expense-item';
 import {ExpenseList} from '../pages/finance/expense-list/expense-list';
 import {Raise} from '../pages/finance/raise/raise';
+import {RaiseCharging} from '../pages/finance/raise-charging/raise-charging';
+import {RaiseCheck} from '../pages/finance/raise-check/raise-check';
 import {RaiseItem} from '../pages/finance/raise-item/raise-item';
 import {RaiseList} from '../pages/finance/raise-list/raise-list';
 
@@ -86,9 +90,13 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     Charging,
     ChargingList,
     Expense,
+    ExpenseCharging,
+    ExpenseCheck,
     ExpenseItem,
     ExpenseList,
     Raise,
+    RaiseCharging,
+    RaiseCheck,
     RaiseItem,
     RaiseList,
 
@@ -162,9 +170,13 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
     Charging,
     ChargingList,
     Expense,
+    ExpenseCharging,
+    ExpenseCheck,
     ExpenseItem,
     ExpenseList,
     Raise,
+    RaiseCharging,
+    RaiseCheck,
     RaiseItem,
     RaiseList,
 
