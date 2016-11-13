@@ -13,7 +13,12 @@ import { NavController } from 'ionic-angular';
 })
 export class ReportIncome {
 
-  constructor(public navCtrl: NavController) {}
+  public myDate:string;
+  report: string = "profitType";
+
+  constructor(public navCtrl: NavController) {
+    this.myDate = new Date().toISOString();
+  }
 
   ionViewDidLoad() {
     console.log('Hello ReportIncome Page');

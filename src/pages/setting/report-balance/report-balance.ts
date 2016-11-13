@@ -13,6 +13,9 @@ import { NavController } from 'ionic-angular';
 })
 export class ReportBalance {
 
+  public myDate:string;
+  report: string = "profitType";
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {

@@ -6,13 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>report-payout</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>支出表</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item>
+    <ion-label>选择日期</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="myDate"
+                  monthNames="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+                  monthShortNames="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+                  cancelText="取消"
+                  doneText="确定">
+    </ion-datetime>
+  </ion-item>
 
 </ion-content>

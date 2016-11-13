@@ -6,13 +6,31 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>report-profit</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>利润表</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="report">
+      <ion-segment-button value="profitType">分类</ion-segment-button>
+      <ion-segment-button value="profitMonth">月度</ion-segment-button>
+      <ion-segment-button value="profitQuater">季度</ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item>
+    <ion-label>选择日期</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="myDate"
+                  monthNames="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+                  monthShortNames="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+                  cancelText="取消"
+                  doneText="确定">
+    </ion-datetime>
+  </ion-item>
 
 </ion-content>
