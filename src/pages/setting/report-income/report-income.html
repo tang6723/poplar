@@ -11,8 +11,8 @@
   </ion-navbar>
   <ion-toolbar>
     <ion-segment [(ngModel)]="report">
-      <ion-segment-button value="reportType">分类</ion-segment-button>
-      <ion-segment-button value="reportMonth">月度</ion-segment-button>
+      <ion-segment-button value="reportType" (ionSelect)="selectedClass()">分类</ion-segment-button>
+      <ion-segment-button value="reportMonth" (ionSelect)="selectedMonth()">月度</ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 
@@ -31,166 +31,37 @@
     </ion-datetime>
   </ion-item>
 
-  <div [ngSwitch]="charging">
+  <div [ngSwitch]="report">
 
     <ion-list inset *ngSwitchCase="'reportType'">
-      <ion-item-divider light>{{billTime1}}</ion-item-divider>
-      <ion-item *ngFor="let item of contractitems1" (click)="itemSelected(items1)">
+      <ion-item *ngFor="let item of classList">
         <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
+          <ion-col width-50 style="font-size: 9px; text-align: left;">{{item.name}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: center; color: green">{{item.sum}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: right;">{{item.percent}}</ion-col>
         </ion-row>
       </ion-item>
-
-      <ion-item-divider light>{{billTime2}}</ion-item-divider>
-      <ion-item *ngFor="let item of contractitems2" (click)="itemSelected(items2)">
-        <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-
     </ion-list>
 
     <ion-list inset *ngSwitchCase="'reportMonth'">
-      <ion-item-divider light>{{billTime1}}</ion-item-divider>
-      <ion-item *ngFor="let item of orderitems1" (click)="itemSelected(items1)">
+      <ion-item *ngFor="let item of monthList">
         <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
+          <ion-col width-50 style="font-size: 9px; text-align: left;">{{item.date}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: center; color: green">{{item.sum}}</ion-col>
+          <ion-col width-25 style="font-size: 9px; text-align: right;">{{item.percent}}</ion-col>
         </ion-row>
       </ion-item>
-
-      <ion-item-divider light>{{billTime2}}</ion-item-divider>
-      <ion-item *ngFor="let item of orderitems2" (click)="itemSelected(items2)">
-        <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-
     </ion-list>
-
-    <ion-list inset *ngSwitchCase="'expense'">
-      <ion-item-divider light>{{billTime1}}</ion-item-divider>
-      <ion-item *ngFor="let item of expenseitems1" (click)="itemSelected(items1)">
-        <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item-divider light>{{billTime2}}</ion-item-divider>
-      <ion-item *ngFor="let item of expenseitems2" (click)="itemSelected(items2)">
-        <ion-row>
-          <ion-col width-62>
-            <h2>{{item.customer}}</h2>
-          </ion-col>
-          <ion-col width-38 text-right>
-            总价：￥<span color="danger">{{item.total}}</span>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ion-note>{{item.billno}}</ion-note>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-badge>{{item.dateissue}}</ion-badge>
-          </ion-col>
-          <ion-col center text-right>
-            <span item-right color="primary">{{item.billstate}}</span>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-
-    </ion-list>
-
-
 
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <div [hidden]="!isValidClass">
+    <ion-label item-left text-left>分类总计：￥{{totalSum}}</ion-label>
+  </div>
+  <div [hidden]="!isValidMonth">
+    <ion-label item-left text-left>月总计：￥{{totalSumMonth}}</ion-label>
+  </div>
+</ion-footer>
