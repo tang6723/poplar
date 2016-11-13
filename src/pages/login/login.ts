@@ -16,7 +16,7 @@ import {AppGlobal} from '../../providers/app-global'
 })
 export class Login {
 
-  userCode: string = "1";
+  userCode: string = "2";
   userName: string = "1";
   passWord: string = "1";
 
