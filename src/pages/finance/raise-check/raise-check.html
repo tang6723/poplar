@@ -7,13 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>raise-check</ion-title>
+    <ion-title>审批</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list inset>
+    <ion-item-divider color="primary">合同信息</ion-item-divider>
+
+    <ion-item>筹资编号：{{billid}}</ion-item>
+    <ion-item>筹资总额：{{billtotal}}</ion-item>
+    <ion-item>经办人员：{{billstate}}</ion-item>
+    <ion-item>筹资状态：{{billstate}}</ion-item>
+
+    <ion-item-divider color="primary">审批情况</ion-item-divider>
+    <ion-item>
+      <ion-label floating>审批意见</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item >
+      <ion-label> 驳回</ion-label>
+      <ion-toggle  checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item >
+      <ion-label> 同意</ion-label>
+      <ion-toggle  checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item ></ion-item>
+
+  </ion-list>
 
 </ion-content>
 

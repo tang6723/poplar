@@ -12,8 +12,15 @@ import {NavController, ViewController} from 'ionic-angular';
   templateUrl: 'raise-charging.html'
 })
 export class RaiseCharging {
+  chargingType:string;
 
-  constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {}
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
+
+  constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {
+    this.chargingType='收款';
+  }
 
   ionViewDidLoad() {
     console.log('Hello RaiseCharging Page');

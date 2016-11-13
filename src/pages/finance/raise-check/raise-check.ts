@@ -13,6 +13,10 @@ import {NavController, ViewController} from 'ionic-angular';
 })
 export class RaiseCheck {
 
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
+
   constructor(public navCtrl: NavController ,public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
