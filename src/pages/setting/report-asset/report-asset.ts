@@ -13,7 +13,11 @@ import { NavController } from 'ionic-angular';
 })
 export class ReportAsset {
 
-  constructor(public navCtrl: NavController) {}
+  asset:string;
+
+  constructor(public navCtrl: NavController) {
+    this.asset="5000.00";
+  }
 
   ionViewDidLoad() {
     console.log('Hello ReportAsset Page');

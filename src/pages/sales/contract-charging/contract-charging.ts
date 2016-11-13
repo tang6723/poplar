@@ -12,6 +12,7 @@ import {NavController, ViewController} from 'ionic-angular';
   templateUrl: 'contract-charging.html'
 })
 export class ContractCharging {
+  chargingType:string;
 
   billid:string="#201609040008";
   billstate:string="草案";

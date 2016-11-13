@@ -12,6 +12,9 @@ import {NavController, ViewController} from 'ionic-angular';
   templateUrl: 'contract-install.html'
 })
 export class ContractInstall {
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
 
   public event = {
     month: '1990-02-19',
