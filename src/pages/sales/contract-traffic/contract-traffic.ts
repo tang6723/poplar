@@ -18,6 +18,9 @@ export class ContractTraffic {
     timeStarts: '07:43',
     timeEnds: '1990-02-20'
   }
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
 
   constructor(public navCtrl: NavController,public viewCtrl: ViewController) {}
 
