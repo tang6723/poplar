@@ -39,8 +39,8 @@ export class Events {
     ];
 
     this.eventData = [
-      { eventtext: '审批', eventid: '101', eventvalue: '起用'},
-      { eventtext: '收款', eventid: '202', eventvalue: '停用'},
+      { eventtext: '审批', eventid: '101', eventvalue: "true"},
+      { eventtext: '收款', eventid: '202', eventvalue: "false"},
       { eventtext: '发票', eventid: '303', eventvalue: '起用'},
       { eventtext: '出库', eventid: '404', eventvalue: '起用'},
       { eventtext: '运输', eventid: '504', eventvalue: '起用'},
@@ -58,12 +58,12 @@ export class Events {
     if(val =="101")
     {
       this.eventData = [
-        { eventtext: '审批', eventid: '101', eventvalue: '起用'},
-        { eventtext: '收款', eventid: '202', eventvalue: '停用'},
-        { eventtext: '发票', eventid: '303', eventvalue: '起用'},
-        { eventtext: '出库', eventid: '404', eventvalue: '起用'},
-        { eventtext: '运输', eventid: '504', eventvalue: '起用'},
-        { eventtext: '安装', eventid: '604', eventvalue: '停用'},
+        { eventtext: '审批', eventid: '101', eventvalue: 'true'},
+        { eventtext: '收款', eventid: '202', eventvalue: 'false'},
+        { eventtext: '发票', eventid: '303', eventvalue: 'true'},
+        { eventtext: '出库', eventid: '404', eventvalue: 'true'},
+        { eventtext: '运输', eventid: '504', eventvalue: 'false'},
+        { eventtext: '安装', eventid: '604', eventvalue: 'false'},
       ];
     }else if(val =="202"){
       this.eventData = [
@@ -80,6 +80,10 @@ export class Events {
         { eventtext: '付款', eventid: '202', eventvalue: '停用'},
       ];
     }
+  }
+
+  textChange(val) {
+    console.log(val);
   }
 
 }

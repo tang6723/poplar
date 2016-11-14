@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import {CustomerList} from '../customer-list/customer-list';
 import {EmployeeList} from '../employee-list/employee-list';
-import {EventsList} from '../events-list/events-list';
+//import {EventsList} from '../events-list/events-list';
+import {Events} from '../events/events'
 import {GoodsList} from '../goods-list/goods-list';
 import {HumanList} from '../human-list/human-list';
 import {ReportAsset} from '../report-asset/report-asset';
@@ -28,7 +29,7 @@ export class SettingHome {
   goodsPage=GoodsList;
   customerPage=CustomerList;
   employeePage=EmployeeList;
-  eventsPage=EventsList;
+  eventsPage=Events;
   humanPage=HumanList;
   reportAssetPage=ReportAsset;
   reportBalancePage=ReportBalance;

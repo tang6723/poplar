@@ -15,7 +15,7 @@ import {Customer} from '../customer/customer';
 })
 export class CustomerList {
 
-  private items:any =
+  items:any =
     [
       {id:"111", name:"客户1", address: "北京长安街1号", person: "张三", phone: "1234567", remark: "说明"},
       {id:"222", name:"客户2", address: "北京长安街2号", person: "李四", phone: "1234567", remark: "说明"},
