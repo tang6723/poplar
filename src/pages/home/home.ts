@@ -20,6 +20,8 @@ import {RaiseList} from  '../finance/raise-list/raise-list';
 
 import {AppGlobal} from '../../providers/app-global';
 
+declare var hprose;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -60,6 +62,23 @@ export class HomePage {
     popover.present({
       ev: ev
     });
+  }
+
+  ngAfterViewInit(){
+    console.time("hprose");
+    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
+    client.hello("World!").then(function (result) {
+      //alert(result);
+      console.info(result);
+      console.log(result);
+      console.warn(result);
+      console.error(result);
+
+    }, function (err) {
+      //alert(err);
+      console.error(err);
+    })
+    console.timeEnd("hprose");
   }
 
 }
