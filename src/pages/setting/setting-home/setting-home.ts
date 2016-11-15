@@ -13,6 +13,7 @@ import {ReportIncome} from '../report-income/report-income';
 import {ReportPayout} from '../report-payout/report-payout';
 import {ReportProfit} from '../report-profit/report-profit';
 
+declare var hprose;
 /*
   Generated class for the SettingHome page.
 

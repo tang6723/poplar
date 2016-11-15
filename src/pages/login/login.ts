@@ -4,6 +4,8 @@ import {NavController, AlertController} from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
 
+declare var hprose;
+
 /*
   Generated class for the Login page.
 

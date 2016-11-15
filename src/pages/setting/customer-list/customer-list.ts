@@ -3,6 +3,7 @@ import { NavController,  AlertController } from 'ionic-angular';
 
 import {Customer} from '../customer/customer';
 
+declare var hprose;
 /*
   Generated class for the CustomerList page.
 

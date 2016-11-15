@@ -6,6 +6,8 @@ import {ContractCharging} from '../contract-charging/contract-charging';
 import {ContractStock} from '../contract-stock/contract-stock';
 import {ContractTraffic} from '../contract-traffic/contract-traffic';
 import {ContractInstall} from '../contract-install/contract-install';
+
+declare var hprose;
 /*
   Generated class for the ContractTimeline page.
 

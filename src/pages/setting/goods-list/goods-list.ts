@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import  {Goods} from '../goods/goods';
 
+declare var hprose;
 /*
   Generated class for the GoodsList page.
 

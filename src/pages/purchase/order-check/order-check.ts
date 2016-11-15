@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 
+declare var hprose;
+
 /*
   Generated class for the OrderCheck page.
 

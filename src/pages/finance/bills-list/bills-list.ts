@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {Bills} from '../bills/bills';
+
+declare var hprose;
 /*
   Generated class for the BillsList page.
 

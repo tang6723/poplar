@@ -3,6 +3,8 @@ import {NavController, NavParams, ModalController} from 'ionic-angular';
 
 import {RaiseCharging} from '../raise-charging/raise-charging';
 import {RaiseCheck} from '../raise-check/raise-check';
+
+declare var hprose;
 /*
   Generated class for the RaiseItem page.
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,AlertController } from 'ionic-angular';
 import { HumanPage } from '../human/human';
 
+declare var hprose;
 /*
   Generated class for the HumanList page.
 

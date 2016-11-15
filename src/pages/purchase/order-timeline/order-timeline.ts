@@ -6,6 +6,8 @@ import {OrderInspection} from '../order-inspection/order-inspection';
 import {OrderPayment} from '../order-payment/order-payment';
 import {OrderStock} from '../order-stock/order-stock';
 import {OrderStorage} from '../order-storage/order-storage';
+
+declare var hprose;
 /*
   Generated class for the OrderTimeline page.
 

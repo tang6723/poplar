@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import {RaiseList} from '../raise-list/raise-list';
 import {RaiseItem} from '../raise-item/raise-item';
 import {AppGlobal} from '../../../providers/app-global';
+
+declare var hprose;
 /*
   Generated class for the Raise page.
 

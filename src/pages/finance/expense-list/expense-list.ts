@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {Expense} from '../expense/expense';
+
+declare var hprose;
 /*
   Generated class for the ExpenseList page.
 

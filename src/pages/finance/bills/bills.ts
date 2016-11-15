@@ -3,6 +3,8 @@ import {NavController, ModalController} from 'ionic-angular';
 
 import {BillsList} from '../bills-list/bills-list';
 import {BillsItem} from '../bills-item/bills-item';
+
+declare var hprose;
 /*
   Generated class for the Bills page.
 

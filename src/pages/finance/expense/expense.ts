@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import {ExpenseList} from '../expense-list/expense-list';
 import {ExpenseItem} from '../expense-item/expense-item';
 import {AppGlobal} from '../../../providers/app-global';
+declare var hprose;
 /*
   Generated class for the Expense page.
 

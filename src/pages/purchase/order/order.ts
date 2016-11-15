@@ -5,6 +5,8 @@ import {OrderGoods} from '../order-goods/order-goods';
 import {OrderSupplier} from '../order-supplier/order-supplier';
 import {OrderTimeline} from '../order-timeline/order-timeline';
 import {AppGlobal} from '../../../providers/app-global';
+
+declare var hprose;
 /*
   Generated class for the Order page.
 

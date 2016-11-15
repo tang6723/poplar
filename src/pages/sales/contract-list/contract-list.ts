@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {Contract} from  '../contract/contract';
+
+declare var hprose;
 /*
   Generated class for the ContractList page.
 

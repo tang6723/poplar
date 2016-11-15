@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import {StockGoods} from '../stock-goods/stock-goods';
 
+declare var hprose;
+
 /*
   Generated class for the StockGoodsList page.
 

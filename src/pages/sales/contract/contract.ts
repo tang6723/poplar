@@ -6,6 +6,7 @@ import {ContractCustomer} from '../contract-customer/contract-customer';
 import {ContractTimeline} from '../contract-timeline/contract-timeline';
 import {AppGlobal} from '../../../providers/app-global';
 
+declare var hprose;
 /*
   Generated class for the Contract page.
 

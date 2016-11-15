@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {Order} from '../order/order';
+
+declare var hprose;
 /*
   Generated class for the OrderList page.
 

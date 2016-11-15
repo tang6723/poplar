@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {CustomerList} from '../customer-list/customer-list';
 
+declare var hprose;
 /*
   Generated class for the Customer page.
 

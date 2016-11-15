@@ -3,6 +3,8 @@ import {NavController, NavParams, ModalController } from 'ionic-angular';
 
 import {ExpenseCharging} from '../expense-charging/expense-charging';
 import {ExpenseCheck} from '../expense-check/expense-check';
+
+declare var hprose;
 /*
   Generated class for the ExpenseItem page.
 
