@@ -3,6 +3,7 @@ import {NavController, AlertController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
+import {isUndefined} from "ionic-angular/util/util";
 
 declare var hprose;
 
@@ -18,7 +19,7 @@ declare var hprose;
 })
 export class Login {
 
-  userCode: string = "2";
+  userCode: string = "1";
   userName: string = "1";
   passWord: string = "1";
 
@@ -44,7 +45,6 @@ export class Login {
 
   loginClick() {
     let err: string = "";
-
     if(this.passWord=="1" && this.userCode=="1"){
       this.userName="王宝强";
       this.userRole="员工";
@@ -96,7 +96,7 @@ export class Login {
       this.navCtrl.setRoot(HomePage);
 
     }else if(this.passWord=="1" && this.userCode=="3"){
-      this.userName="王五";
+
       this.userRole="财务";
 
       this.isBill=true;
@@ -139,18 +139,18 @@ export class Login {
 
   ngAfterViewInit(){
     console.time("hprose");
-    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    client.hello("3").then(function (result) {
-      //alert(result);
+    //var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
+    var client = new hprose.HttpClient("http://www.hprose.com/example/", ["hello"]);
+    client.hello("World!", function(result) {
       console.info(result);
       console.log(result);
       console.warn(result);
       console.error(result);
-
-    }, function (err) {
+      //alert(result);
+    }, function(name, err) {
       //alert(err);
       console.error(err);
-    })
+    });
     console.timeEnd("hprose");
   }
 

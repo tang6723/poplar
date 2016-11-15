@@ -28,18 +28,17 @@ export class Customer {
 
   ngAfterViewInit(){
     console.time("hprose");
-    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
-    client.hello("World!").then(function (result) {
-      //alert(result);
+    var client = new hprose.HttpClient("http://www.hprose.com/example/", ["hello"]);
+    client.hello("World!", function(result) {
       console.info(result);
       console.log(result);
       console.warn(result);
       console.error(result);
-
-    }, function (err) {
+      //alert(result);
+    }, function(name, err) {
       //alert(err);
       console.error(err);
-    })
+    });
     console.timeEnd("hprose");
   }
 
