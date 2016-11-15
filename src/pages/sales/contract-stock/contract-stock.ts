@@ -72,35 +72,22 @@ export class ContractStock {
     let data={'customerIdParam':'3','customerParam':'鞍山技术学校','contactsParam':'马蓉','telephoneParam':'1233333'};
     this.viewCtrl.dismiss(data);
   }
-  /*
-  presentCustomerModal(){
-    let modal=this.modalCtrl.create(ContractCustomer,{ 'customerId': this.customerId });
-    modal.onDidDismiss(data => {
-      this.customerId=data.customerIdParam;
-      this.customer=data.customerParam;
-      this.contacts=data.contactsParam;
-      this.telephone=data.telephoneParam;
-      this.customeraddress=data.customeraddressParam;
 
-      console.log(data.customerParam);
-    });
-    modal.present();
+  ngAfterViewInit(){
+    console.time("hprose");
+    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
+    client.hello("World!").then(function (result) {
+      //alert(result);
+      console.info(result);
+      console.log(result);
+      console.warn(result);
+      console.error(result);
 
+    }, function (err) {
+      //alert(err);
+      console.error(err);
+    })
+    console.timeEnd("hprose");
   }
 
-  presentGoodsModal(){
-    let modal=this.modalCtrl.create(ContractGoods);
-    modal.present();
-
-  }
-
-  presentContractTimelineModal(mytype:string){
-
-    this.navCtrl.push(ContractTimeline,{
-      id:this.billid,
-      type:this.typeTmp
-
-    });
-
-*/
 }

@@ -94,4 +94,21 @@ export class ReportProfit {
     this.isValidQuater=true;
   }
 
+  ngAfterViewInit(){
+    console.time("hprose");
+    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
+    client.hello("World!").then(function (result) {
+      //alert(result);
+      console.info(result);
+      console.log(result);
+      console.warn(result);
+      console.error(result);
+
+    }, function (err) {
+      //alert(err);
+      console.error(err);
+    })
+    console.timeEnd("hprose");
+  }
+
 }
