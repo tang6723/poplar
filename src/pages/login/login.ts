@@ -139,10 +139,9 @@ export class Login {
 
   ngAfterViewInit(){
     console.time("hprose");
-    //var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    var client = new hprose.HttpClient("http://www.hprose.com/example/", ["hello"]);
-    client.hello("World!", function(result) {
-      console.info(result);
+    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
+    client.queryUser("3").then(function (result) {
+      console.info(result.userName);
       console.log(result);
       console.warn(result);
       console.error(result);
