@@ -16,8 +16,13 @@ import {AppGlobal} from '../../../providers/app-global';
 })
 export class Expense {
 
+  chargingType:string;
+
   billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
   typeTmp: string;
+
 
   isBill:boolean=false;
   isCheck:boolean=false;

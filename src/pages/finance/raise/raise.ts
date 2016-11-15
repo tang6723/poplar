@@ -17,8 +17,13 @@ import {AppGlobal} from '../../../providers/app-global';
 export class Raise {
 
   raiseList=RaiseList;
-  billid:string="#201609040008";
+
   typeTmp: string;
+  chargingType:string;
+
+  billid:string="#201609040008";
+  billstate:string="草案";
+  billtotal:number =30380.00;
 
   isBill:boolean=false;
   isCheck:boolean=false;
