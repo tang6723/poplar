@@ -44,6 +44,7 @@ export class Login {
 
   loginClick() {
     let err: string = "";
+
     if(this.passWord=="1" && this.userCode=="1"){
       this.userName="王宝强";
       this.userRole="员工";
@@ -138,8 +139,8 @@ export class Login {
 
   ngAfterViewInit(){
     console.time("hprose");
-    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
-    client.hello("World!").then(function (result) {
+    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
+    client.hello("3").then(function (result) {
       //alert(result);
       console.info(result);
       console.log(result);

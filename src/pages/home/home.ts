@@ -19,6 +19,7 @@ import {Raise} from  '../finance/raise/raise';
 import {RaiseList} from  '../finance/raise-list/raise-list';
 
 import {AppGlobal} from '../../providers/app-global';
+import {isUndefined} from "ionic-angular/util/util";
 
 declare var hprose;
 
@@ -66,9 +67,13 @@ export class HomePage {
 
   ngAfterViewInit(){
     console.time("hprose");
-    var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
-    client.hello("World!").then(function (result) {
-      //alert(result);
+    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
+    client.queryUser("3").then(function (result) {
+      if (result !== isUndefined && result !== null){
+        alert(result.systemUserID);
+      }
+      alert(result.userName);
+
       console.info(result);
       console.log(result);
       console.warn(result);
