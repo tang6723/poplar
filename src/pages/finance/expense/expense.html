@@ -46,4 +46,33 @@
 
 <ion-content padding>
 
+  <ion-list inset>
+    <ion-item-divider color="primary">报销信息</ion-item-divider>
+
+    <ion-item>报销编号：{{billid}}</ion-item>
+    <ion-item>报销总价：{{billtotal}}</ion-item>
+    <ion-item>报销人员：{{billstate}}</ion-item>
+    <ion-item>报销状态：{{billstate}}</ion-item>
+
+    <ion-item-divider color="primary">收付款情况</ion-item-divider>
+    <ion-item>
+      <ion-label>支付方式</ion-label>
+      <ion-select [(ngModel)]="chargingType" okText="确定" cancelText="取消">
+        <ion-option value="收款">收款</ion-option>
+        <ion-option value="付款">付款</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>收付金额</ion-label>
+      <ion-input type="number" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>收付摘要</ion-label>
+      <ion-textarea  rows="2"></ion-textarea>
+    </ion-item>
+
+    <ion-item ></ion-item>
+
+  </ion-list>
+
 </ion-content>
