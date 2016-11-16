@@ -17,7 +17,7 @@ export class UserData {
     console.log('Hello UserData Provider');
   }
 
-  getHelloWord():string{
+  public getHelloWord():string{
     var userinf='test';
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
