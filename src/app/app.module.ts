@@ -67,6 +67,8 @@ import {ReportProfit} from '../pages/setting/report-profit/report-profit';
 
 import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
+import {StockInventory} from '../pages/stock/stock-inventory/stock-inventory';
+import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inventory-list';
 
 
 @NgModule({
@@ -131,6 +133,8 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
 
     StockGoods,
     StockGoodsList,
+    StockInventory,
+    StockInventoryList,
 
     Login,
     Popover,
@@ -211,6 +215,8 @@ import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
 
     StockGoods,
     StockGoodsList,
+    StockInventory,
+    StockInventoryList,
 
     Login,
     Popover,
