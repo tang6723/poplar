@@ -24,7 +24,7 @@ export class UserData {
 
   }
 
-  public static getHelloWord():string{
+  getHelloWord():string{
     var userinf = 'jjj';
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {

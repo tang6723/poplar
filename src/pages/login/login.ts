@@ -49,7 +49,7 @@ export class Login {
   }
   getHeroes(): void {
     //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);
-    this.userName=UserData.getHelloWord();
+    this.userName=this.userDataService.getHelloWord();
   }
 
   loginClick() {
