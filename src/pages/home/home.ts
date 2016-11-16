@@ -82,7 +82,7 @@ export class HomePage {
     }, function (err) {
       //alert(err);
       console.error(err);
-    })
+    });
     console.timeEnd("hprose");
   }
 
