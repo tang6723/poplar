@@ -34,11 +34,11 @@ export class Login {
   isSetting:boolean=false;
 
   appInstance:AppGlobal;
-  //userDataInstance:UserData;
+  userDataService:UserData;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
     this.appInstance=AppGlobal.getInstance();
-    //this.userDataInstance=new UserData();
+    //this.userDataService=new UserData();
   }
 
   ionViewDidLoad() {
@@ -48,7 +48,7 @@ export class Login {
   }
   getHeroes(): void {
     //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);
-    //this.userName=this.userDataService.getHelloWord();
+    this.userName=UserData.getHelloWord();
   }
 
   loginClick() {

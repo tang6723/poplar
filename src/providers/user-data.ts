@@ -16,8 +16,11 @@ export class UserData {
   constructor(public http: Http) {
     console.log('Hello UserData Provider');
   }
+  load(){
 
-  public getHelloWord():string{
+  }
+
+  public static getHelloWord():string{
     var userinf='test';
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
