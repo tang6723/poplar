@@ -15,7 +15,8 @@ import {UserData} from '../../providers/user-data';
 */
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
+  providers: [UserData]
 })
 export class Login {
 
@@ -34,9 +35,10 @@ export class Login {
   isSetting:boolean=false;
 
   appInstance:AppGlobal;
-  userDataService:UserData;
+  //userDataService:UserData;
+  message: string = "Ice cream. It's Good and You Want It.";
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
     this.appInstance=AppGlobal.getInstance();
     //this.userDataService=new UserData();
   }
@@ -44,7 +46,8 @@ export class Login {
   ionViewDidLoad() {
     console.log('Hello Login Page');
     this.getHeroes();
-    console.log(this.userName);
+    this.message=this.userDataService.getIceCream();
+    console.log(this.message);
   }
   getHeroes(): void {
     //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);

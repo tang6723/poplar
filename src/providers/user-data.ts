@@ -12,6 +12,10 @@ declare var hprose;
 */
 @Injectable()
 export class UserData {
+  userName:string='kkkkk';
+
+  hadIceCream: boolean = false;
+
 
   constructor(public http: Http) {
     console.log('Hello UserData Provider');
@@ -21,7 +25,7 @@ export class UserData {
   }
 
   public static getHelloWord():string{
-    var userinf='test';
+    var userinf = 'jjj';
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
       if (result !== isUndefined && result !== null){
@@ -29,7 +33,7 @@ export class UserData {
       }
       //alert(result.userName);
 
-      userinf=result.userName;
+      this.userinf=result.userName;
 
       console.info(userinf);
       console.log(userinf);
@@ -38,10 +42,19 @@ export class UserData {
 
     }, function (err) {
       //alert(err);
-      userinf=err;
+      this.userinf=err;
       console.error(err);
     });
     return userinf;
   }
 
+  getIceCream() {
+    this.hadIceCream = true;
+    return 'mmmm... ice cream';
+  }
+
+
+
+
 }
+
