@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {StockGoods} from '../stock-goods/stock-goods';
+import {StockInventory} from '../stock-inventory/stock-inventory';
+import {StockInventoryList} from '../stock-inventory-list/stock-inventory-list';
 
 declare var hprose;
 
@@ -16,6 +18,9 @@ declare var hprose;
   templateUrl: 'stock-goods-list.html'
 })
 export class StockGoodsList {
+
+  stockInventory=StockInventory;
+  stockInventoryList=StockInventoryList;
 
   myIcon: string = "md-ionic";
   items: string[];
