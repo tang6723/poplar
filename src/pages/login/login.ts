@@ -3,9 +3,9 @@ import {NavController, AlertController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {isUndefined} from "ionic-angular/util/util";
+import {UserData} from '../../providers/user-data';
 
-declare var hprose;
+
 
 /*
   Generated class for the Login page.
@@ -34,13 +34,21 @@ export class Login {
   isSetting:boolean=false;
 
   appInstance:AppGlobal;
+  //userDataInstance:UserData;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
     this.appInstance=AppGlobal.getInstance();
+    //this.userDataInstance=new UserData();
   }
 
   ionViewDidLoad() {
     console.log('Hello Login Page');
+    this.getHeroes();
+    console.log(this.userName);
+  }
+  getHeroes(): void {
+    //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);
+    //this.userName=this.userDataService.getHelloWord();
   }
 
   loginClick() {
@@ -56,7 +64,6 @@ export class Login {
       this.isInstall=true;
       this.isRaise=false;
       this.isSetting=false;
-
 
       this.appInstance.username=this.userName;
       this.appInstance.usertitle=this.userRole;
@@ -139,17 +146,7 @@ export class Login {
 
   ngAfterViewInit(){
     console.time("hprose");
-    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    client.queryUser("3").then(function (result) {
-      console.info(result.userName);
-      console.log(result);
-      console.warn(result);
-      console.error(result);
-      //alert(result);
-    }, function(name, err) {
-      //alert(err);
-      console.error(err);
-    });
+
     console.timeEnd("hprose");
   }
 
