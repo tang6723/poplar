@@ -33,9 +33,7 @@ export class Login {
   isInstall:boolean=false;
   isRaise:boolean=false;
   isSetting:boolean=false;
-
   appInstance:AppGlobal;
-  //userDataService:UserData;
   message: string = "Ice cream. It's Good and You Want It.";
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
