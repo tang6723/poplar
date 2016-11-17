@@ -73,6 +73,7 @@ export class HomePage {
         alert(result.systemUserID);
       }
       alert(result.userName);
+      this.username=result.userName;
 
       console.info(result);
       console.log(result);

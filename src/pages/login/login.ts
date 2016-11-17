@@ -3,7 +3,7 @@ import {NavController, AlertController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {UserData} from '../../providers/user-data';
+import {UserData, SystemUser} from '../../providers/user-data';
 
 
 
@@ -16,7 +16,7 @@ import {UserData} from '../../providers/user-data';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [UserData]
+  providers: [UserData, SystemUser]
 })
 export class Login {
 
@@ -35,19 +35,23 @@ export class Login {
   isSetting:boolean=false;
   appInstance:AppGlobal;
   message: string = "Ice cream. It's Good and You Want It.";
-  userInfo: any;
+  userInfo: SystemUser;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
     this.appInstance=AppGlobal.getInstance();
-    //this.userDataService=new UserData();
+
   }
 
   ionViewDidLoad() {
 
     console.log('Hello Login Page');
+    //console.log(this.userName);
     console.time("hprose");
+    //this.userDataService.getIceCream().then(data=> this.userInfo=data);
     //this.userInfo=this.userDataService.getHelloWord();
-    console.log(this.userDataService.getHelloWord());
+    this.userInfo=this.userDataService.getIceCream();
+    //this.userCode ='13';
+    console.log(this.userInfo);
     console.timeEnd("hprose");
     console.log('Hello Login Page1');
     //this.message=this.userDataService.getIceCream();
@@ -149,6 +153,11 @@ export class Login {
       alert.present();
     }
 
+  }
+
+  passwordClick()
+  {
+    this.userCode=this.userInfo['userName'];
   }
 
   ngAfterViewInit(){
