@@ -41,6 +41,10 @@ export class Login {
     this.appInstance=AppGlobal.getInstance();
 
   }
+  onPageWillEnter() {
+    // 在这里可以做页面初始化的一些事情
+    console.log('page 1: page will enter.');
+  }
 
   ionViewDidLoad() {
 
@@ -158,7 +162,13 @@ export class Login {
 
   passwordClick()
   {
-    this.userCode=this.userInfo['userName'];
+    //this.userCode=this.userInfo['userName'];
+    this.userDataService.getHelloWord().then(data=> {
+      this.userInfo=data;
+      this.userCode=data.userName;
+      alert(this.userCode);
+
+    });
   }
 
   ngAfterViewInit(){
