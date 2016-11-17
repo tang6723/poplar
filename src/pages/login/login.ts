@@ -47,9 +47,13 @@ export class Login {
     console.log('Hello Login Page');
     //console.log(this.userName);
     console.time("hprose");
-    //this.userDataService.getIceCream().then(data=> this.userInfo=data);
+    this.userDataService.getHelloWord().then(data=> {
+       this.userInfo=data;
+       this.userCode=data.userName;
+
+    });
     //this.userInfo=this.userDataService.getHelloWord();
-    this.userInfo=this.userDataService.getIceCream();
+    //this.userInfo=this.userDataService.getIceCream();
     //this.userCode ='13';
     console.log(this.userInfo);
     console.timeEnd("hprose");
@@ -114,9 +118,7 @@ export class Login {
       this.navCtrl.setRoot(HomePage);
 
     }else if(this.passWord=="1" && this.userCode=="3"){
-
       this.userRole="财务";
-
       this.isBill=true;
       this.isCheck=true;
       this.isCharging=true;
@@ -125,7 +127,6 @@ export class Login {
       this.isInstall=true;
       this.isRaise=true;
       this.isSetting=true;
-
 
       this.appInstance.username=this.userName;
       this.appInstance.usertitle=this.userRole;
@@ -141,12 +142,12 @@ export class Login {
 
     }
     else {
-      err = "用户名或密码错误！";
+      err = "用户名或密码错误！请输入正确信息！";
     }
 
     if (err != '') {
       let alert = this.alertCtrl.create({
-        title: '错误：',
+        title: '请输入正确信息',
         subTitle: err,
         buttons: ['OK']
       });
@@ -161,6 +162,12 @@ export class Login {
   }
 
   ngAfterViewInit(){
+    this.userDataService.getHelloWord().then(data=> {
+      this.userInfo=data;
+      this.userCode=data.userName;
+
+    });
+    console.log('Hello Login Page ngAfterViewInit');
   }
 
 }
