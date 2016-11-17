@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import {isUndefined} from "ionic-angular/util/util";
 
 declare var hprose;
+
 /*
   Generated class for the UserData provider.
 
@@ -13,36 +14,39 @@ declare var hprose;
 @Injectable()
 export class UserData {
   userName:string='kkkkk';
-
   hadIceCream: boolean = false;
+  //systemUser:any=[]
+  systemUser:SysteUser;
+
+  //hprose.ClassManager.register(systemUser, 'com_ft_db_mapping_SystemUser')
+  //systemUser:any;
+
 
 
   constructor(public http: Http) {
     console.log('Hello UserData Provider');
+    //hprose.ClassManager.register(systemUser, 'com_ft_db_mapping_SystemUser');
   }
   load(){
 
   }
 
-  getHelloWord():string{
-    var userinf = 'jjj';
+  getHelloWord():any{
+    var userinf ={};
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
       if (result !== isUndefined && result !== null){
-        //alert(result.systemUserID);
+        alert(result.systemUserID);
+        userinf=result;
       }
-      //alert(result.userName);
-
-      this.userinf=result.userName;
-
-      console.info(userinf);
-      console.log(userinf);
-      console.warn(userinf);
-      console.error(userinf);
+      alert(result.userName);
+      console.info(result);
+      console.log(result);
+      console.warn(result);
+      console.error(result);
 
     }, function (err) {
       //alert(err);
-      this.userinf=err;
       console.error(err);
     });
     return userinf;
@@ -50,11 +54,18 @@ export class UserData {
 
   getIceCream() {
     this.hadIceCream = true;
+    console.log('getIceCream!!!');
     return 'mmmm... ice cream';
   }
+}
 
-
-
+export class SysteUser{
+  systemUserID:number;
+  rowGUID:string;
+  userCode:string;
+  userType:string;
 
 }
+
+
 

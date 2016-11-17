@@ -42,8 +42,13 @@ export class Login {
   }
 
   ionViewDidLoad() {
+    var userInfo;
     console.log('Hello Login Page');
-    this.getHeroes();
+    console.time("hprose");
+    userInfo=this.userDataService.getHelloWord();
+    //console.log(userInfo.userName);
+    console.timeEnd("hprose");
+    console.log('Hello Login Page1');
     this.message=this.userDataService.getIceCream();
     console.log(this.message);
   }
@@ -146,9 +151,7 @@ export class Login {
   }
 
   ngAfterViewInit(){
-    console.time("hprose");
 
-    console.timeEnd("hprose");
   }
 
 }
