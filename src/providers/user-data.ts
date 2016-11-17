@@ -32,23 +32,26 @@ export class UserData {
   }
 
   getHelloWord():any{
-    var userinf ={};
+    var userinf;
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
       if (result !== isUndefined && result !== null){
-        alert(result.systemUserID);
-        userinf=result;
+        //alert(result.systemUserID);
+        //userinf=result;
+        console.log(result);
+        return result;
       }
-      alert(result.userName);
-      console.info(result);
-      console.log(result);
-      console.warn(result);
-      console.error(result);
+      //alert(result.userName);
+      //console.info(result);
+      //console.log(result);
+      //console.warn(result);
+      //console.error(result);
 
     }, function (err) {
       //alert(err);
       console.error(err);
     });
+
     return userinf;
   }
 

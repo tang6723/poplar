@@ -35,6 +35,7 @@ export class Login {
   isSetting:boolean=false;
   appInstance:AppGlobal;
   message: string = "Ice cream. It's Good and You Want It.";
+  userInfo: any;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
     this.appInstance=AppGlobal.getInstance();
@@ -42,15 +43,15 @@ export class Login {
   }
 
   ionViewDidLoad() {
-    var userInfo;
+
     console.log('Hello Login Page');
     console.time("hprose");
-    userInfo=this.userDataService.getHelloWord();
-    //console.log(userInfo.userName);
+    //this.userInfo=this.userDataService.getHelloWord();
+    console.log(this.userDataService.getHelloWord());
     console.timeEnd("hprose");
     console.log('Hello Login Page1');
-    this.message=this.userDataService.getIceCream();
-    console.log(this.message);
+    //this.message=this.userDataService.getIceCream();
+    //console.log(this.message);
   }
   getHeroes(): void {
     //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);
@@ -151,7 +152,6 @@ export class Login {
   }
 
   ngAfterViewInit(){
-
   }
 
 }
