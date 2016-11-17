@@ -165,6 +165,7 @@ export class Login {
     this.userDataService.getHelloWord().then(data=> {
       this.userInfo=data;
       this.userCode=data.userName;
+      alert(this.userCode);
 
     });
     console.log('Hello Login Page ngAfterViewInit');
