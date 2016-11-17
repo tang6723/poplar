@@ -40,7 +40,7 @@ export class UserData {
     //var userinf;
     //result:SystemUser;
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    var result = client.queryUser('3');
+    var result = client.queryUser('1');
     return result;
   }
 

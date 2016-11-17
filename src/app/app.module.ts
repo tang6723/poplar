@@ -16,7 +16,7 @@ import {ContractList} from '../pages/sales/contract-list/contract-list'
 import {ContractStock} from '../pages/sales/contract-stock/contract-stock';
 import {ContractTimeline} from '../pages/sales/contract-timeline/contract-timeline';
 import {ContractTraffic} from '../pages/sales/contract-traffic/contract-traffic';
-
+//import {UserData} from '../providers/user-data';
 
 
 import {Bills} from '../pages/finance/bills/bills';
@@ -85,6 +85,7 @@ import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inve
     ContractStock,
     ContractTraffic,
     ContractTimeline,
+    //UserData,
 
     Bills,
     BillsItem,
@@ -167,6 +168,7 @@ import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inve
     ContractStock,
     ContractTraffic,
     ContractTimeline,
+    //UserData,
 
     Bills,
     BillsItem,

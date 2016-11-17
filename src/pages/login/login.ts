@@ -39,7 +39,12 @@ export class Login {
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
     this.appInstance=AppGlobal.getInstance();
-
+    this.userDataService.getHelloWord().then(data=>{
+      console.log(data);
+      this.userName=data;
+      this.userCode=data.userName;
+      console.log(this.userCode);
+    });
   }
   onPageWillEnter() {
     // 在这里可以做页面初始化的一些事情
@@ -48,14 +53,14 @@ export class Login {
 
   ionViewDidLoad() {
 
-    console.log('Hello Login Page');
+    /*console.log('Hello Login Page');
     //console.log(this.userName);
     console.time("hprose");
-    this.userDataService.getHelloWord().then(data=> {
-       this.userInfo=data;
-       this.userCode=data.userName;
+    //this.userDataService.getHelloWord().then(data=> {
+    //   this.userInfo=data;
+    //   this.userCode=data.userName;
 
-    });
+    // });
     //this.userInfo=this.userDataService.getHelloWord();
     //this.userInfo=this.userDataService.getIceCream();
     //this.userCode ='13';
@@ -63,7 +68,7 @@ export class Login {
     console.timeEnd("hprose");
     console.log('Hello Login Page1');
     //this.message=this.userDataService.getIceCream();
-    //console.log(this.message);
+    //console.log(this.message);*/
   }
   getHeroes(): void {
     //this.userDataService.getHelloWord().then(heroes => this.userName = heroes);
@@ -172,13 +177,13 @@ export class Login {
   }
 
   ngAfterViewInit(){
-    this.userDataService.getHelloWord().then(data=> {
+    /*this.userDataService.getHelloWord().then(data=> {
       this.userInfo=data;
       this.userCode=data.userName;
       alert(this.userCode);
 
     });
-    console.log('Hello Login Page ngAfterViewInit');
+    console.log('Hello Login Page ngAfterViewInit');*/
   }
 
 }
