@@ -23,7 +23,7 @@ export class Login {
   appInstance: AppGlobal;
   //message: string = "Ice cream. It's Good and You Want It.";
   userInfo: SystemUser;
-  userRole:UserRole
+  userRole:UserRole;
   _userName:string;
   _userPassword:string;
 
@@ -53,15 +53,15 @@ export class Login {
           console.log('HomePage3'+this.userRole.userName);
           this.userRole.userPermission =this.userInfo.userPermission;
           console.log(this.userRole.userPermission);
-          this.userRole.isBill = true;
-          this.userRole.isCheck = true;
-          this.userRole.isCharging = true;
-          this.userRole.isStock = true;
-          this.userRole.isTraffic = true;
-          this.userRole.isInstall = true;
-          this.userRole.isRaise = true;
-          this.userRole.isSetting = true;
-          this.appInstance.userRole = this.userRole;
+          this.appInstance.isBill = true;
+          this.appInstance.isCheck = true;
+          this.appInstance.isCharging = true;
+          this.appInstance.isStock = true;
+          this.appInstance.isTraffic = true;
+          this.appInstance.isInstall = true;
+          this.appInstance.isRaise = true;
+          this.appInstance.isSetting = true;
+
           console.log('HomePage4');
 
           this.navCtrl.setRoot(HomePage);
