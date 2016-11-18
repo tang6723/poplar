@@ -35,10 +35,10 @@ export class Raise {
 
   constructor(public navCtrl: NavController) {
     this.appInstance=AppGlobal.getInstance();
-    this.isBill=this.appInstance.isBill;
-    this.isCheck=this.appInstance.isCheck;
-    this.isCharging=this.appInstance.isCharging;
-    this.isSetting=this.appInstance.isSetting;
+    this.isBill=this.appInstance.userRole.isBill;
+    this.isCheck=this.appInstance.userRole.isCheck;
+    this.isCharging=this.appInstance.userRole.isCharging;
+    this.isSetting=this.appInstance.userRole.isSetting;
   }
 
   ionViewDidLoad() {
