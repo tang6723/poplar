@@ -35,8 +35,8 @@ export class Popover {
   }
 
   logOut(){
-    this.appInstance.username="";
-    this.appInstance.usertitle="";
+    this.appInstance.userRole.userName="";
+    this.appInstance.userRole.userPermission="";
     this.viewCtrl.dismiss();
     this.navCtrl.setRoot(Login);
   }
