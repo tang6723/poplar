@@ -7,9 +7,20 @@ import 'rxjs/add/operator/map';
 declare var hprose;
 
 @Injectable()
+export class UserRole{
+
+}
+
+@Injectable()
+export class UserDept{
+
+}
+
+@Injectable()
 export class SystemUser{
   systemUserID:number;
   rowGUID:string;
+  userCode:string;
   userType:string;
   userName:string;
   userNickName:string;
