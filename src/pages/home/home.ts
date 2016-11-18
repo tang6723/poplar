@@ -54,8 +54,8 @@ export class HomePage {
   constructor(public popoverCtrl: PopoverController,public navCtrl: NavController) {
 
     this.appInstance=AppGlobal.getInstance();
-    this.username=this.appInstance.userRole.userName;
-    this.usertitle=this.appInstance.userRole.userPermission;
+    this.username=this.appInstance.userName;
+    this.usertitle=this.appInstance.userPermission;
 
   }
 

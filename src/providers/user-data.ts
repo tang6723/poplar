@@ -71,30 +71,17 @@ hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUserProperty')
 */
 @Injectable()
 export class UserData {
-  //userName:string='kkkkk';
-  hadIceCream: boolean = false;
-  //systemUser:any=[]
-  systemUser:SystemUser;
-
-  //hprose.ClassManager.register(systemUser, 'com_ft_db_mapping_SystemUser')
-  //systemUser:any;
-
-
+  client:any;
 
   constructor(public http: Http) {
     console.log('Hello UserData Provider');
-    //this.systemUser.userName='ddd';
-    //hprose.ClassManager.register(systemUser, 'com_ft_db_mapping_SystemUser');
+    this.client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
   }
-  load(){
 
-  }
 
   login(username:string):any{
-    //var userinf;
-    //result:SystemUser;
-    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    var result = client.queryUser(username);
+    //var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
+    var result = this.client.queryUser(username);
     return result;
   }
 

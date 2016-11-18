@@ -53,14 +53,14 @@ export class ContractStock {
 
   constructor(public navCtrl: NavController,public viewCtrl: ViewController) {
     this.appInstance=AppGlobal.getInstance();
-    this.isBill=this.appInstance.userRole.isBill;
-    this.isCheck=this.appInstance.userRole.isCheck;
-    this.isCharging=this.appInstance.userRole.isCharging;
-    this.isStock=this.appInstance.userRole.isStock;
-    this.isTraffic=this.appInstance.userRole.isTraffic;
-    this.isInstall=this.appInstance.userRole.isInstall;
-    this.isRaise=this.appInstance.userRole.isRaise;
-    this.isSetting=this.appInstance.userRole.isSetting;
+    this.isBill=this.appInstance.isBill;
+    this.isCheck=this.appInstance.isCheck;
+    this.isCharging=this.appInstance.isCharging;
+    this.isStock=this.appInstance.isStock;
+    this.isTraffic=this.appInstance.isTraffic;
+    this.isInstall=this.appInstance.isInstall;
+    this.isRaise=this.appInstance.isRaise;
+    this.isSetting=this.appInstance.isSetting;
 
   }
 
