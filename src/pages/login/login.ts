@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, AlertController} from 'ionic-angular';
+import {NavController, AlertController, LoadingController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
@@ -37,7 +37,7 @@ export class Login {
   message: string = "Ice cream. It's Good and You Want It.";
   userInfo: SystemUser;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,public userDataService:UserData,public loadingCtrl: LoadingController) {
     this.appInstance=AppGlobal.getInstance();
     this.userDataService.getHelloWord().then(data=>{
       console.log(data);
@@ -184,6 +184,15 @@ export class Login {
 
     });
     console.log('Hello Login Page ngAfterViewInit');*/
+    this.presentLoading();
+  }
+  presentLoading() {
+    let loading = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000,
+      dismissOnPageChange: true
+    });
+    loading.present();
   }
 
 }
