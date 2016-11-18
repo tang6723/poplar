@@ -6,8 +6,40 @@ import 'rxjs/add/operator/map';
 
 declare var hprose;
 
-export class SystemUser{};
+@Injectable()
+export class SystemUser{
+  systemUserID:number;
+  rowGUID:string;
+  userType:string;
+  userName:string;
+  userNickName:string;
+
+  userPassWord:string;
+  userPermission:string;
+  logTime:string;
+  onlineState:string;
+
+  state:string;
+  remarks:string;
+};
 hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUser');
+
+@Injectable()
+export class SystemUserProperty{
+  systemUserPropertyID:number;
+  rowGUID:string;
+  systemUserID:number;
+  propertyType:string;
+  propertyClassfication
+
+  propertyKey:string;
+  propertyValue:string;
+  state:string;
+  remarks:string;
+
+}
+hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUserProperty');
+
 
 /*
   Generated class for the UserData provider.
