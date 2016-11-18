@@ -6,63 +6,6 @@ import 'rxjs/add/operator/map';
 
 declare var hprose;
 
-@Injectable()
-export class UserRole{
-  enterpriseCode: string = "En001";
-  enterpriseName: string = "测试企业名称";
-  organizationCode: string = "Org001";
-  organizationName: string = "测试机构名称";
-  userCode:string;
-  userType:string;
-  userName:string;
-  userNickName:string;
-  userPermission:string="经理";
-
-  isBill: boolean = true;
-  isCheck: boolean = true;
-  isCharging: boolean = true;
-  isStock: boolean = true;
-  isTraffic: boolean = true;
-  isInstall: boolean = true;
-  isRaise: boolean = true;
-  isSetting: boolean = true;
-}
-
-@Injectable()
-export class SystemUser{
-  systemUserID:number;
-  rowGUID:string;
-  userCode:string;
-  userType:string;
-  userName:string;
-  userNickName:string;
-
-  userPassWord:string;
-  userPermission:string;
-  logTime:string;
-  onlineState:string;
-
-  state:string;
-  remarks:string;
-};
-hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUser');
-
-@Injectable()
-export class SystemUserProperty{
-  systemUserPropertyID:number;
-  rowGUID:string;
-  systemUserID:number;
-  propertyType:string;
-  propertyClassfication
-
-  propertyKey:string;
-  propertyValue:string;
-  state:string;
-  remarks:string;
-}
-hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUserProperty');
-
-
 /*
   Generated class for the UserData provider.
 

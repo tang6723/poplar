@@ -3,7 +3,7 @@ import {NavController, AlertController, LoadingController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {UserRole, SystemUser,UserData} from '../../providers/user-data';
+import {UserData} from '../../providers/user-data';
 import {isUndefined} from "ionic-angular/util/util";
 
 
@@ -16,16 +16,24 @@ import {isUndefined} from "ionic-angular/util/util";
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [UserRole, SystemUser,UserData]
+  providers: [UserData]
 })
 export class Login {
 
   appInstance: AppGlobal;
   //message: string = "Ice cream. It's Good and You Want It.";
-  userInfo: SystemUser;
-  userRole:UserRole;
   _userName:string;
   _userPassword:string;
+  //
+  enterpriseCode: string = "En001";
+  enterpriseName: string = "测试企业名称";
+  organizationCode: string = "Org001";
+  organizationName: string = "测试机构名称";
+  userCode:string;
+  userType:string;
+  userName:string;
+  userNickName:string;
+  userPermission:string;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
     this.appInstance = AppGlobal.getInstance();
@@ -41,18 +49,16 @@ export class Login {
     this.userDataService.login(this._userName).then(data=> {
       if (data !== isUndefined && data !== null){
         console.log(data);
-        console.log('HomePage1  '+data.userPassWord);
         if(this._userPassword!==data.userPassWord){
           err = "用户名或密码错误！请输入正确信息！";
           console.log('HomePage2');
         }else {
-          this.userInfo = data;
+          this.appInstance.userCode = data.userCode;
+          this.appInstance.userName = data.userName;
+          this.appInstance.userNickName = data.userNickName;
+          this.appInstance.userPermission = data.userPermission;
           console.log('HomePage3');
           //TODO:需要进行完善
-          this.userRole.userName=this.userInfo.userName;
-          console.log('HomePage3'+this.userRole.userName);
-          this.userRole.userPermission =this.userInfo.userPermission;
-          console.log(this.userRole.userPermission);
           this.appInstance.isBill = true;
           this.appInstance.isCheck = true;
           this.appInstance.isCharging = true;
@@ -61,27 +67,32 @@ export class Login {
           this.appInstance.isInstall = true;
           this.appInstance.isRaise = true;
           this.appInstance.isSetting = true;
-
           console.log('HomePage4');
 
           this.navCtrl.setRoot(HomePage);
           console.log('HomePage5');
-          this.navCtrl.push(HomePage);
+          //this.navCtrl.push(HomePage);
 
-          this.presentLoading();
+          //this.presentLoading();
         }
+      }else {
+        console.log('HomePage6');
+        err = "用户名或密码错误！请输入正确信息！";
+
+
       }
-      console.log('HomePage6');
+      if (err != '') {
+        let alert = this.alertCtrl.create({
+          title: '请输入正确信息',
+          subTitle: err,
+          buttons: ['OK']
+        });
+        alert.present();
+      }
+
     });
 
-    if (err != '') {
-      let alert = this.alertCtrl.create({
-        title: '请输入正确信息',
-        subTitle: err,
-        buttons: ['OK']
-      });
-      alert.present();
-    }
+
 
   }
 
