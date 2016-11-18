@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {UserRole} from 'user-data';
 /*
   Generated class for the AppGlobal provider.
 
@@ -20,17 +20,9 @@ export class AppGlobal {
   apiUrl: string = "/MobileApi/api";
 
   /**当前用户信息 */
-  username: string = "";
-  usertitle:string="";
+  userRole:UserRole;
+  //systemUser:SystemUser;
 
-  isBill:boolean=false;
-  isCheck:boolean=false;
-  isCharging:boolean=false;
-  isStock:boolean=false;
-  isTraffic:boolean=false;
-  isInstall:boolean=false;
-  isRaise:boolean=false;
-  isSetting:boolean=false;
   /**分页页数 */
   pageSize: number = 10;
 

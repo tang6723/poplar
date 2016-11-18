@@ -19,13 +19,13 @@
     <ion-item>
       <ion-icon name="md-contacts" item-left color="primary"></ion-icon>
       <ion-label floating>用户：</ion-label>
-      <ion-input type="text"[(ngModel)]="userCode"></ion-input>
+      <ion-input type="text"[(ngModel)]="_userName" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="md-key" item-left color="primary"></ion-icon>
       <ion-label floating>密码：</ion-label>
-      <ion-input type="password" [(ngModel)]="passWord"></ion-input>
+      <ion-input type="password" [(ngModel)]="_userPassword" required></ion-input>
     </ion-item>
 
   </ion-list>

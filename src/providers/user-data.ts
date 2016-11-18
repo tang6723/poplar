@@ -8,12 +8,24 @@ declare var hprose;
 
 @Injectable()
 export class UserRole{
+  enterpriseCode: string = "En001";
+  enterpriseName: string = "测试企业名称";
+  organizationCode: string = "Org001";
+  organizationName: string = "测试机构名称";
+  userCode:string;
+  userType:string;
+  userName:string;
+  userNickName:string;
+  userPermission:string="经理";
 
-}
-
-@Injectable()
-export class UserDept{
-
+  isBill: boolean = true;
+  isCheck: boolean = true;
+  isCharging: boolean = true;
+  isStock: boolean = true;
+  isTraffic: boolean = true;
+  isInstall: boolean = true;
+  isRaise: boolean = true;
+  isSetting: boolean = true;
 }
 
 @Injectable()
@@ -47,7 +59,6 @@ export class SystemUserProperty{
   propertyValue:string;
   state:string;
   remarks:string;
-
 }
 hprose.ClassManager.register(SystemUser, 'com_ft_db_mapping_SystemUserProperty');
 
@@ -79,21 +90,16 @@ export class UserData {
 
   }
 
-  getHelloWord():any{
+  login(username:string):any{
     //var userinf;
     //result:SystemUser;
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    var result = client.queryUser('1');
+    var result = client.queryUser(username);
     return result;
   }
 
-  getIceCream():any {
-    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
-    var result;
-    client.queryUser('3').then(d=>result = d);
-    console.log(result);
-    return result;
-  }
+
+
 }
 
 

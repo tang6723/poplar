@@ -19,9 +19,10 @@ import {Raise} from  '../finance/raise/raise';
 import {RaiseList} from  '../finance/raise-list/raise-list';
 
 import {AppGlobal} from '../../providers/app-global';
-import {isUndefined} from "ionic-angular/util/util";
+//import {App}
+//import {isUndefined} from "ionic-angular/util/util";
 
-declare var hprose;
+
 
 @Component({
   selector: 'page-home',
@@ -53,8 +54,8 @@ export class HomePage {
   constructor(public popoverCtrl: PopoverController,public navCtrl: NavController) {
 
     this.appInstance=AppGlobal.getInstance();
-    this.username=this.appInstance.username;
-    this.usertitle=this.appInstance.usertitle;
+    this.username=this.appInstance.userRole.userName;
+    this.usertitle=this.appInstance.userRole.userPermission;
 
   }
 
@@ -66,6 +67,7 @@ export class HomePage {
   }
 
   ngAfterViewInit(){
+    /*
     console.time("hprose");
     var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["queryUser"]);
     client.queryUser("3").then(function (result) {
@@ -85,6 +87,7 @@ export class HomePage {
       console.error(err);
     });
     console.timeEnd("hprose");
+    */
   }
 
 }

@@ -3,7 +3,8 @@ import {NavController, AlertController, LoadingController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {UserData, SystemUser} from '../../providers/user-data';
+import {UserRole, SystemUser,UserData} from '../../providers/user-data';
+import {isUndefined} from "ionic-angular/util/util";
 
 
 /*
@@ -15,121 +16,63 @@ import {UserData, SystemUser} from '../../providers/user-data';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [UserData, SystemUser]
+  providers: [UserRole, SystemUser,UserData]
 })
 export class Login {
 
-  userCode: string = "1";
-  userName: string = "1";
-  passWord: string = "1";
-
-  userRole: string = "";
-  isBill: boolean = false;
-  isCheck: boolean = false;
-  isCharging: boolean = false;
-  isStock: boolean = false;
-  isTraffic: boolean = false;
-  isInstall: boolean = false;
-  isRaise: boolean = false;
-  isSetting: boolean = false;
   appInstance: AppGlobal;
   //message: string = "Ice cream. It's Good and You Want It.";
   userInfo: SystemUser;
+  userRole:UserRole
+  _userName:string;
+  _userPassword:string;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
     this.appInstance = AppGlobal.getInstance();
-
   }
 
   ionViewDidLoad() {
     console.log('Hello Login Page');
-    this.userDataService.getHelloWord().then(data=> {
-      console.log(data);
-      this.userName = data;
-      this.userCode = data.userName;
-      console.log(this.userCode);
-    });
-    this.presentLoading();
+
   }
 
   loginClick() {
     let err: string = "";
-    if (this.passWord == "1" && this.userCode == "1") {
-      this.userName = "王宝强";
-      this.userRole = "员工";
-      this.isBill = true;
-      this.isCheck = false;
-      this.isCharging = false;
-      this.isStock = true;
-      this.isTraffic = true;
-      this.isInstall = true;
-      this.isRaise = false;
-      this.isSetting = false;
+    this.userDataService.login(this._userName).then(data=> {
+      if (data !== isUndefined && data !== null){
+        console.log(data);
+        console.log('HomePage1  '+data.userPassWord);
+        if(this._userPassword!==data.userPassWord){
+          err = "用户名或密码错误！请输入正确信息！";
+          console.log('HomePage2');
+        }else {
+          this.userInfo = data;
+          console.log('HomePage3');
+          //TODO:需要进行完善
+          this.userRole.userName=this.userInfo.userName;
+          console.log('HomePage3'+this.userRole.userName);
+          this.userRole.userPermission =this.userInfo.userPermission;
+          console.log(this.userRole.userPermission);
+          this.userRole.isBill = true;
+          this.userRole.isCheck = true;
+          this.userRole.isCharging = true;
+          this.userRole.isStock = true;
+          this.userRole.isTraffic = true;
+          this.userRole.isInstall = true;
+          this.userRole.isRaise = true;
+          this.userRole.isSetting = true;
+          this.appInstance.userRole = this.userRole;
+          console.log('HomePage4');
 
-      this.appInstance.username = this.userName;
-      this.appInstance.usertitle = this.userRole;
-      this.appInstance.isBill = this.isBill;
-      this.appInstance.isCheck = this.isCheck;
-      this.appInstance.isCharging = this.isCharging;
-      this.appInstance.isStock = this.isStock;
-      this.appInstance.isTraffic = this.isTraffic;
-      this.appInstance.isInstall = this.isInstall;
-      this.appInstance.isRaise = this.isRaise;
-      this.appInstance.isSetting = this.isSetting;
+          this.navCtrl.setRoot(HomePage);
+          console.log('HomePage5');
+          this.navCtrl.push(HomePage);
 
-      this.navCtrl.setRoot(HomePage);
-
-    } else if (this.passWord == "1" && this.userCode == "2") {
-      this.userName = "马容";
-      this.userRole = "经理";
-      this.isBill = false;
-      this.isCheck = true;
-      this.isCharging = true;
-      this.isStock = true;
-      this.isTraffic = true;
-      this.isInstall = true;
-      this.isRaise = true;
-      this.isSetting = true;
-
-      this.appInstance.username = this.userName;
-      this.appInstance.usertitle = this.userRole;
-      this.appInstance.isBill = this.isBill;
-      this.appInstance.isCheck = this.isCheck;
-      this.appInstance.isCharging = this.isCharging;
-      this.appInstance.isStock = this.isStock;
-      this.appInstance.isTraffic = this.isTraffic;
-      this.appInstance.isInstall = this.isInstall;
-      this.appInstance.isRaise = this.isRaise;
-      this.appInstance.isSetting = this.isSetting;
-      this.navCtrl.setRoot(HomePage);
-
-    } else if (this.passWord == "1" && this.userCode == "3") {
-      this.userRole = "财务";
-      this.isBill = true;
-      this.isCheck = true;
-      this.isCharging = true;
-      this.isStock = true;
-      this.isTraffic = true;
-      this.isInstall = true;
-      this.isRaise = true;
-      this.isSetting = true;
-
-      this.appInstance.username = this.userName;
-      this.appInstance.usertitle = this.userRole;
-      this.appInstance.isBill = this.isBill;
-      this.appInstance.isCheck = this.isCheck;
-      this.appInstance.isCharging = this.isCharging;
-      this.appInstance.isStock = this.isStock;
-      this.appInstance.isTraffic = this.isTraffic;
-      this.appInstance.isInstall = this.isInstall;
-      this.appInstance.isRaise = this.isRaise;
-      this.appInstance.isSetting = this.isSetting;
-      this.navCtrl.setRoot(HomePage);
-
-    }
-    else {
-      err = "用户名或密码错误！请输入正确信息！";
-    }
+          this.presentLoading();
+        }
+      }
+      console.log('HomePage6');
+    });
 
     if (err != '') {
       let alert = this.alertCtrl.create({
@@ -144,12 +87,14 @@ export class Login {
 
   passwordClick() {
     //this.userCode=this.userInfo['userName'];
+    /*
     this.userDataService.getHelloWord().then(data=> {
       this.userInfo = data;
       this.userCode = data.userName;
       alert(this.userCode);
 
     });
+    */
   }
 
   presentLoading() {
