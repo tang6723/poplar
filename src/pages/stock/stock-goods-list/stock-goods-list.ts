@@ -74,20 +74,9 @@ export class StockGoodsList {
 
   ngAfterViewInit(){
     console.time("hprose");
-    // var client = hprose.Client.create("http://www.hprose.com/example/", ["hello"]);
-    // client.hello("World!").then(function (result) {
-    //   //alert(result);
-    //   console.info(result);
-    //   console.log(result);
-    //   console.warn(result);
-    //   console.error(result);
-    //
-    // }, function (err) {
-    //   //alert(err);
-    //   console.error(err);
-    // })
 
-    this.stockData.getStockDataList().then(d=> { console.log(d); this.goodsItems1 = d;});
+
+    this.stockData.getPaging().then(d=> { console.log(d); this.goodsItems1 = d;});
     console.log(this.goodsItems1);
     console.timeEnd("hprose");
     this.presentLoading();

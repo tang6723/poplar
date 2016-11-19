@@ -69,11 +69,13 @@ import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
 import {StockInventory} from '../pages/stock/stock-inventory/stock-inventory';
 import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inventory-list';
+import {UserData, UserRole} from "../providers/user-data";
 
 
 @NgModule({
   declarations: [
     MyApp,
+
     Contract,
     ContractCharging,
     ContractCheck,
@@ -85,7 +87,7 @@ import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inve
     ContractStock,
     ContractTraffic,
     ContractTimeline,
-    //UserData,
+
 
     Bills,
     BillsItem,
@@ -157,6 +159,7 @@ import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inve
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    //UserData,
     Contract,
     ContractCharging,
     ContractCheck,
@@ -224,6 +227,9 @@ import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inve
     Popover,
     HomePage
   ],
-  providers: []
+  providers: [
+    UserData,
+    UserRole
+  ]
 })
 export class AppModule {}

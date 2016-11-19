@@ -15,8 +15,8 @@ import {isUndefined} from "ionic-angular/util/util";
  */
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
-  providers: [UserData]
+  templateUrl: 'login.html'
+  //providers: [UserData]
 })
 export class Login {
 

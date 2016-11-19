@@ -37,22 +37,16 @@ export class StockDataProperty{
 
 @Injectable()
 export class StockData {
+  client:any;
 
   constructor(public http: Http) {
     console.log('Hello StockData Provider');
+    this.client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["getPaging"]);
   }
 
-  getStockDataList(){
+  getPaging(){
     console.log("getStockDataList Start!!");
-    var client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["getStockDataList"]);
-    var result;
-    client.getStockDataList().then(function (d) {
-      console.error(d);
-      result = d;
-      console.log("getStockDataList End!!");
-      // return d;
-    });
-    console.error(result);
+    var result = this.client.getPaging('2');
     return result;
   }
 
