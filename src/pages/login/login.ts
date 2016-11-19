@@ -3,7 +3,7 @@ import {NavController, AlertController, LoadingController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {UserData} from '../../providers/user-data';
+import {UserData, UserRole} from '../../providers/user-data';
 import {isUndefined} from "ionic-angular/util/util";
 
 
@@ -21,6 +21,7 @@ import {isUndefined} from "ionic-angular/util/util";
 export class Login {
 
   appInstance: AppGlobal;
+  userRR:UserRole;
   //message: string = "Ice cream. It's Good and You Want It.";
   _userName:string;
   _userPassword:string;
@@ -37,6 +38,8 @@ export class Login {
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
     this.appInstance = AppGlobal.getInstance();
+    userDataService.test='kkkk';
+    this.userRR.userName="kkkkkkkllll";
   }
 
   ionViewDidLoad() {
@@ -49,6 +52,8 @@ export class Login {
     this.userDataService.login(this._userName).then(data=> {
       if (data !== isUndefined && data !== null){
         console.log(data);
+        console.log(this.userDataService.test);
+        console.log(this.userRR.userName);
         if(this._userPassword!==data.userPassWord){
           err = "用户名或密码错误！请输入正确信息！";
           console.log('HomePage2');
@@ -69,7 +74,7 @@ export class Login {
           this.appInstance.isRaise = true;
           this.appInstance.isSetting = true;
           */
-          this.appInstance.userRole.enterpriseCode='Et001';
+          this.appInstance.userRole['enterpriseCode']='Et001';
           this.appInstance.userRole.enterpriseName='ABC  Limit';
           this.appInstance.userRole.organizationCode='ORG001';
           this.appInstance.userRole.organizationName='市场部';

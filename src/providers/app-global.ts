@@ -47,13 +47,15 @@ export class AppGlobal {
   /**分页页数 */
   pageSize: number = 10;
 
-  constructor(public userRole:UserRole) {
+  constructor() {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
+    //this. userRole.enterpriseCode='En001';
+    /*
     this.userRole.enterpriseCode='En001';
     this.userRole.enterpriseName='测试企业名称';
     this.userRole.organizationCode='OR001';
-    this.userRole.userType='企业';
+    this.userRole.userType='企业';*/
 
 
 

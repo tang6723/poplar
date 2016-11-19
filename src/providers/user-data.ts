@@ -14,6 +14,7 @@ declare var hprose;
 */
 @Injectable()
 export class UserData {
+  test:string;
   client:any;
 
   constructor(public http: Http) {
@@ -54,6 +55,8 @@ export class UserRole{
   isInstall: boolean = true;
   isRaise: boolean = true;
   isSetting: boolean = true;
+
+  constructor(){}
 }
 
 
