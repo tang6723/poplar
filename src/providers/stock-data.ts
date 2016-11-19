@@ -33,15 +33,17 @@ export class StockDataProperty{
 
 };
 
-
-
 @Injectable()
 export class StockData {
   client:any;
 
+  pageingParam: any;
+
+
   constructor(public http: Http) {
     console.log('Hello StockData Provider');
     this.client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["getPaging"]);
+    this.client.manager.re
   }
 
   getPaging(){
