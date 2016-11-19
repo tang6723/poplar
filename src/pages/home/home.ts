@@ -56,7 +56,7 @@ export class HomePage {
     this.appInstance=AppGlobal.getInstance();
     //this.username=this.appInstance.userName;
     //this.userPermission=this.appInstance.userPermission;
-    this.username=this.appInstance.userRole.userName;
+    this.username=this.appInstance.userInf.userName;
 
   }
 

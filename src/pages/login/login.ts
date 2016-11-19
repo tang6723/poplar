@@ -3,7 +3,7 @@ import {NavController, AlertController, LoadingController} from 'ionic-angular';
 
 import {HomePage} from '../home/home';
 import {AppGlobal} from '../../providers/app-global'
-import {UserData, UserRole} from '../../providers/user-data';
+import {UserData, UserInformation} from '../../providers/user-data';
 import {isUndefined} from "ionic-angular/util/util";
 
 
@@ -21,7 +21,7 @@ import {isUndefined} from "ionic-angular/util/util";
 export class Login {
 
   appInstance: AppGlobal;
-  userRR:UserRole;
+  userInf:UserInformation;
   //message: string = "Ice cream. It's Good and You Want It.";
   _userName:string;
   _userPassword:string;
@@ -39,7 +39,7 @@ export class Login {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
     this.appInstance = AppGlobal.getInstance();
     userDataService.test='kkkk';
-    this.userRR.userName="kkkkkkkllll";
+    this.userInf.userName="kkkkkkkllll";
   }
 
   ionViewDidLoad() {
@@ -53,7 +53,7 @@ export class Login {
       if (data !== isUndefined && data !== null){
         console.log(data);
         console.log(this.userDataService.test);
-        console.log(this.userRR.userName);
+        console.log(this.userInf.userName);
         if(this._userPassword!==data.userPassWord){
           err = "用户名或密码错误！请输入正确信息！";
           console.log('HomePage2');
@@ -74,15 +74,15 @@ export class Login {
           this.appInstance.isRaise = true;
           this.appInstance.isSetting = true;
           */
-          this.appInstance.userRole['enterpriseCode']='Et001';
-          this.appInstance.userRole.enterpriseName='ABC  Limit';
-          this.appInstance.userRole.organizationCode='ORG001';
-          this.appInstance.userRole.organizationName='市场部';
-          this.appInstance.userRole.userType='';
-          this.appInstance.userRole.userCode=data.userCode;
-          this.appInstance.userRole.userName=data.userName;
-          this.appInstance.userRole.userNickName=data.userNickName;
-          this.appInstance.userRole.userPermission=data.userPermission;
+          this.appInstance.userInf['enterpriseCode']='Et001';
+          this.appInstance.userInf.enterpriseName='ABC  Limit';
+          this.appInstance.userInf.organizationCode='ORG001';
+          this.appInstance.userInf.organizationName='市场部';
+          this.appInstance.userInf.userType='';
+          this.appInstance.userInf.userCode=data.userCode;
+          this.appInstance.userInf.userName=data.userName;
+          this.appInstance.userInf.userNickName=data.userNickName;
+          this.appInstance.userInf.userPermission=data.userPermission;
 
 
           console.log('HomePage4');
