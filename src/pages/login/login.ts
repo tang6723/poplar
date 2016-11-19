@@ -39,7 +39,7 @@ export class Login {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
     this.appInstance = AppGlobal.getInstance();
     userDataService.test='kkkk';
-    this.userInf.userName="kkkkkkkllll";
+    //this.userInf.userName="kkkkkkkllll";
   }
 
   ionViewDidLoad() {
