@@ -47,7 +47,7 @@ export class AppGlobal {
   /**分页页数 */
   pageSize: number = 10;
 
-  constructor() {
+  constructor(public userRole:UserRole) {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
     this.userRole.enterpriseCode='En001';

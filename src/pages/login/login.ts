@@ -53,6 +53,7 @@ export class Login {
           err = "用户名或密码错误！请输入正确信息！";
           console.log('HomePage2');
         }else {
+          /*
           this.appInstance.userCode = data.userCode;
           this.appInstance.userName = data.userName;
           this.appInstance.userNickName = data.userNickName;
@@ -67,6 +68,18 @@ export class Login {
           this.appInstance.isInstall = true;
           this.appInstance.isRaise = true;
           this.appInstance.isSetting = true;
+          */
+          this.appInstance.userRole.enterpriseCode='Et001';
+          this.appInstance.userRole.enterpriseName='ABC  Limit';
+          this.appInstance.userRole.organizationCode='ORG001';
+          this.appInstance.userRole.organizationName='市场部';
+          this.appInstance.userRole.userType='';
+          this.appInstance.userRole.userCode=data.userCode;
+          this.appInstance.userRole.userName=data.userName;
+          this.appInstance.userRole.userNickName=data.userNickName;
+          this.appInstance.userRole.userPermission=data.userPermission;
+
+
           console.log('HomePage4');
 
           this.navCtrl.setRoot(HomePage);

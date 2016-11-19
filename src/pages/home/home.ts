@@ -49,13 +49,14 @@ export class HomePage {
 
   appInstance:AppGlobal;
   username:string;
-  usertitle:string;
+  userPermission:string;
 
   constructor(public popoverCtrl: PopoverController,public navCtrl: NavController) {
 
     this.appInstance=AppGlobal.getInstance();
-    this.username=this.appInstance.userName;
-    this.usertitle=this.appInstance.userPermission;
+    //this.username=this.appInstance.userName;
+    //this.userPermission=this.appInstance.userPermission;
+    this.username=this.appInstance.userRole.userName;
 
   }
 
