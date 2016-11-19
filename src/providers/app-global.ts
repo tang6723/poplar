@@ -22,27 +22,7 @@ export class AppGlobal {
   apiUrl: string = "/MobileApi/api";
 
   /**当前用户信息 */
-  userInf:UserInformation;
-  /*
-  enterpriseCode: string = "En001";
-  enterpriseName: string = "测试企业名称";
-  organizationCode: string = "Org001";
-  organizationName: string = "测试机构名称";
-  userCode:string;
-  userType:string;
-  userName:string;
-  userNickName:string;
-  userPermission:string="经理";
-
-  isBill: boolean = true;
-  isCheck: boolean = true;
-  isCharging: boolean = true;
-  isStock: boolean = true;
-  isTraffic: boolean = true;
-  isInstall: boolean = true;
-  isRaise: boolean = true;
-  isSetting: boolean = true;
-  */
+  userInf: UserInformation;
 
   /**分页页数 */
   pageSize: number = 10;
@@ -50,17 +30,9 @@ export class AppGlobal {
   constructor() {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
-    //this. userInf.enterpriseCode='En001';
-    /*
-    this.userInf.enterpriseCode='En001';
-    this.userInf.enterpriseName='测试企业名称';
-    this.userInf.organizationCode='OR001';
-    this.userInf.userType='企业';*/
-
-
+    this.userInf=new  UserInformation();
 
   }
-
   /**
    * 获取当前实例
    *

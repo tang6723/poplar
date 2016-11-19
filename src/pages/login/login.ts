@@ -21,7 +21,7 @@ import {isUndefined} from "ionic-angular/util/util";
 export class Login {
 
   appInstance: AppGlobal;
-  userInf:UserInformation;
+  //userInf:UserInformation;
   //message: string = "Ice cream. It's Good and You Want It.";
   _userName:string;
   _userPassword:string;
@@ -36,7 +36,9 @@ export class Login {
   userNickName:string;
   userPermission:string;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public userDataService: UserData, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
+              public userDataService: UserData, public loadingCtrl: LoadingController,
+              public  userInf:UserInformation) {
     this.appInstance = AppGlobal.getInstance();
     userDataService.test='kkkk';
     this.userInf.userName="kkkkkkkllll";
