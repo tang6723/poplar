@@ -22,7 +22,7 @@ export class AppGlobal {
   apiUrl: string = "/MobileApi/api";
 
   /**当前用户信息 */
-  //userInf:UserInformation;
+  userInf: UserInformation;
   /*
   enterpriseCode: string = "En001";
   enterpriseName: string = "测试企业名称";
@@ -47,9 +47,10 @@ export class AppGlobal {
   /**分页页数 */
   pageSize: number = 10;
 
-  constructor(userInf:UserInformation) {
+  constructor() {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
+    this.userInf=new  UserInformation();
     //this. userInf.enterpriseCode='En001';
     /*
     this.userInf.enterpriseCode='En001';
