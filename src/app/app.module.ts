@@ -69,7 +69,7 @@ import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
 import {StockInventory} from '../pages/stock/stock-inventory/stock-inventory';
 import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inventory-list';
-import {UserData, UserRole} from "../providers/user-data";
+import {UserData,  UserInformation} from "../providers/user-data";
 
 
 @NgModule({
@@ -229,7 +229,7 @@ import {UserData, UserRole} from "../providers/user-data";
   ],
   providers: [
     UserData,
-    UserRole
+    UserInformation
   ]
 })
 export class AppModule {}

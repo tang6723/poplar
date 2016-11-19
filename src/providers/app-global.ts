@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 //import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {UserRole} from "./user-data";
+import {UserInformation} from "./user-data";
 
 /*
   Generated class for the AppGlobal provider.
@@ -22,7 +22,7 @@ export class AppGlobal {
   apiUrl: string = "/MobileApi/api";
 
   /**当前用户信息 */
-  userRole:UserRole;
+  userInf:UserInformation;
   /*
   enterpriseCode: string = "En001";
   enterpriseName: string = "测试企业名称";
@@ -50,12 +50,12 @@ export class AppGlobal {
   constructor() {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
-    //this. userRole.enterpriseCode='En001';
+    //this. userInf.enterpriseCode='En001';
     /*
-    this.userRole.enterpriseCode='En001';
-    this.userRole.enterpriseName='测试企业名称';
-    this.userRole.organizationCode='OR001';
-    this.userRole.userType='企业';*/
+    this.userInf.enterpriseCode='En001';
+    this.userInf.enterpriseName='测试企业名称';
+    this.userInf.organizationCode='OR001';
+    this.userInf.userType='企业';*/
 
 
 

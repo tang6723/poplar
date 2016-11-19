@@ -36,7 +36,7 @@ export class UserData {
  * 作者：Tang
  */
 @Injectable()
-export class UserRole{
+export class UserInformation{
   enterpriseCode: string ;
   enterpriseName: string;
   organizationCode: string ;
