@@ -69,7 +69,9 @@ import {StockGoods} from '../pages/stock/stock-goods/stock-goods';
 import {StockGoodsList} from '../pages/stock/stock-goods-list/stock-goods-list';
 import {StockInventory} from '../pages/stock/stock-inventory/stock-inventory';
 import {StockInventoryList} from '../pages/stock/stock-inventory-list/stock-inventory-list';
+
 import {UserData,  UserInformation} from "../providers/user-data";
+import {AppGlobal} from "../providers/app-global";
 
 
 @NgModule({
@@ -228,6 +230,7 @@ import {UserData,  UserInformation} from "../providers/user-data";
     HomePage
   ],
   providers: [
+    AppGlobal,
     UserData,
     UserInformation
   ]
