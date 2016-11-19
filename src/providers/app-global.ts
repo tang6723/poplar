@@ -23,6 +23,7 @@ export class AppGlobal {
 
   /**当前用户信息 */
   userRole:UserRole;
+  /*
   enterpriseCode: string = "En001";
   enterpriseName: string = "测试企业名称";
   organizationCode: string = "Org001";
@@ -41,6 +42,7 @@ export class AppGlobal {
   isInstall: boolean = true;
   isRaise: boolean = true;
   isSetting: boolean = true;
+  */
 
   /**分页页数 */
   pageSize: number = 10;
@@ -48,6 +50,13 @@ export class AppGlobal {
   constructor() {
     console.log('Hello AppGlobal Provider');
     AppGlobal.instance = this;
+    this.userRole.enterpriseCode='En001';
+    this.userRole.enterpriseName='测试企业名称';
+    this.userRole.organizationCode='OR001';
+    this.userRole.userType='企业';
+
+
+
   }
 
   /**

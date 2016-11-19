@@ -25,20 +25,22 @@ export class Expense {
   typeTmp: string;
 
 
-  isBill:boolean=false;
-  isCheck:boolean=false;
-  isCharging:boolean=false;
-  isSetting:boolean=false;
+  isBill:boolean=true ;
+  isCheck:boolean=true;
+  isCharging:boolean=true;
+  isSetting:boolean=true;
   appInstance:AppGlobal;
 
   expenseList=ExpenseList;
 
   constructor(public navCtrl: NavController) {
     this.appInstance=AppGlobal.getInstance();
+    /*
     this.isBill=this.appInstance.isBill;
     this.isCheck=this.appInstance.isCheck;
     this.isCharging=this.appInstance.isCharging;
     this.isSetting=this.appInstance.isSetting;
+    */
   }
 
   ionViewDidLoad() {

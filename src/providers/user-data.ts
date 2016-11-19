@@ -36,15 +36,15 @@ export class UserData {
  */
 @Injectable()
 export class UserRole{
-  enterpriseCode: string = "En001";
-  enterpriseName: string = "测试企业名称";
-  organizationCode: string = "Org001";
-  organizationName: string = "测试机构名称";
+  enterpriseCode: string ;
+  enterpriseName: string;
+  organizationCode: string ;
+  organizationName: string ;
   userCode:string;
   userType:string;
   userName:string;
   userNickName:string;
-  userPermission:string="经理";
+  userPermission:string;
 
   isBill: boolean = true;
   isCheck: boolean = true;

@@ -31,14 +31,14 @@ export class ContractStock {
   tracfficCost:number=2450;
   installCost:number=900;
 
-  isBill:boolean=false;
-  isCheck:boolean=false;
-  isCharging:boolean=false;
-  isStock:boolean=false;
-  isTraffic:boolean=false;
-  isInstall:boolean=false;
-  isRaise:boolean=false;
-  isSetting:boolean=false;
+  isBill:boolean=true;
+  isCheck:boolean=true;
+  isCharging:boolean=true;
+  isStock:boolean=true;
+  isTraffic:boolean=true;
+  isInstall:boolean=true;
+  isRaise:boolean=true;
+  isSetting:boolean=true;
   appInstance:AppGlobal;
 
   items: any = [
@@ -53,6 +53,7 @@ export class ContractStock {
 
   constructor(public navCtrl: NavController,public viewCtrl: ViewController) {
     this.appInstance=AppGlobal.getInstance();
+    /*
     this.isBill=this.appInstance.isBill;
     this.isCheck=this.appInstance.isCheck;
     this.isCharging=this.appInstance.isCharging;
@@ -61,6 +62,7 @@ export class ContractStock {
     this.isInstall=this.appInstance.isInstall;
     this.isRaise=this.appInstance.isRaise;
     this.isSetting=this.appInstance.isSetting;
+    */
 
   }
 
