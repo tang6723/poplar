@@ -37,18 +37,25 @@ export class StockDataProperty{
 export class StockData {
   client:any;
 
-  pageingParam: any;
+  pagingParam:{};
 
 
   constructor(public http: Http) {
     console.log('Hello StockData Provider');
     this.client = hprose.Client.create("http://localhost:8080/DataService/DataService", ["getPaging"]);
-    this.client.manager.re
+    hprose.ClassManager.register(this.pagingParam, 'com.ft.model.PagingInputParam');
+    console.log(this.pagingParam.valueOf());
   }
 
   getPaging(){
     console.log("getStockDataList Start!!");
-    var result = this.client.getPaging('2');
+    this.pagingParam['pageIndex'] = Number(0);
+    this.pagingParam['pageSize'] = Number(2);
+    this.pagingParam['querySQL'] = "";
+    this.pagingParam['qeryParam'] = [];
+    var result;
+    this.client.getPaging(this.pagingParam, "com.ft.db.mapping.StockData").then(d=>result = d);
+    console.log(result);
     return result;
   }
 

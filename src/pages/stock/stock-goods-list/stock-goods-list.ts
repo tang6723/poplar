@@ -37,7 +37,7 @@ export class StockGoodsList {
   //   {goodsstate: '上架', id: '123459', name: '商品4', price: 2450.23, num: 15, specification: '规格20MM'},
   //   {goodsstate: '上架', id: '123460', name: '商品5', price: 900, num: 30, specification: '规格10MM'}
   // ];
-  goodsItems1:StockDataProperty;
+  goodsItems1:any;
 
     goodsItems2: any = [
     {goodsstate: '上架', id: '654321', name: '运输费', price: 200.00, num: 3, specification: '说明1'},
@@ -45,8 +45,8 @@ export class StockGoodsList {
     {goodsstate: '上架', id: '654323', name: '莫名其妙费', price: 280.00, num: 6, specification: '说明3'},
   ];
 
-  constructor(public navCtrl: NavController, public stockData:StockData, public loadingCtrl: LoadingController) {
-
+  constructor(public navCtrl: NavController, public stockData:StockData, public loadingCtrl: LoadingController ) {
+    //this.goodsItems1 = stockData.getPaging();
   }
 
   ionViewDidLoad() {
@@ -76,9 +76,9 @@ export class StockGoodsList {
     console.time("hprose");
 
 
-    this.stockData.getPaging().then(d=> { console.log(d); this.goodsItems1 = d;});
-    console.log(this.goodsItems1);
-    console.timeEnd("hprose");
+    // this.stockData.getPaging().then(d=> { console.log(d); this.goodsItems1 = d;});
+    // console.log(this.goodsItems1);
+    // console.timeEnd("hprose");
     this.presentLoading();
   }
 
